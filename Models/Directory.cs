@@ -8,7 +8,7 @@
             Stars = new Star[n];
             foreach (var star in Stars) 
             {
-                Console.WriteLine(Star.Name);
+                Console.WriteLine(star.StarName);
             }
         }
     }

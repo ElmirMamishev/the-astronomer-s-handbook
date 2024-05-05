@@ -1,6 +1,8 @@
 ﻿namespace StarBook.Models
 {
-    class Star
+    public class Star
     {
+        public string StarName { get; set; }
+
     }
 }
