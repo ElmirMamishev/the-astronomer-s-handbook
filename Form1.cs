@@ -1,4 +1,4 @@
-namespace Довідник_астронома
+namespace StarBook
 {
     public partial class Form1 : Form
     {

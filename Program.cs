@@ -1,4 +1,4 @@
-namespace Довідник_астронома
+namespace StarBook
 {
     internal static class Program
     {

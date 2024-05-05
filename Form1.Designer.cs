@@ -1,4 +1,4 @@
-﻿namespace Довідник_астронома
+﻿namespace StarBook
 {
     partial class Form1
     {
