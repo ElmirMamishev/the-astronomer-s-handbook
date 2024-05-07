@@ -3,12 +3,16 @@
     public class Directory
     {
         public Star[] Stars { get; set; }
-        public Directory(int n) 
+        public Directory(int n)
         {
             Stars = new Star[n];
-            foreach (var star in Stars) 
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine(star.StarName);
+                var S = new Star();
+                S.StarName = $"Star{i}";
+                S.StarConstellation = $"Constellation{i}";
+                S.StarDistance = i;
+                Console.WriteLine(S);
             }
         }
     }
