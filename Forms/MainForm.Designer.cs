@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            starBindingSource = new BindingSource(components);
             imageList1 = new ImageList(components);
             newToolStripMenuItem = new ToolStripMenuItem();
             openToolStripMenuItem = new ToolStripMenuItem();
@@ -73,25 +72,23 @@
             toolStripSeparator8 = new ToolStripSeparator();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            searchButton = new Button();
             coordinateBox = new TextBox();
             coordinateText = new Label();
             distanceBox = new TextBox();
             distanceText = new Label();
             stellarBox = new TextBox();
             stellarText = new Label();
-            ConstellationBox = new TextBox();
+            constellationBox = new TextBox();
             label2 = new Label();
             nameBox = new TextBox();
             nameText = new Label();
-            searchButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)starBindingSource).BeginInit();
+            resultList = new ListBox();
+            starBindingSource = new BindingSource(components);
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)starBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // starBindingSource
-            // 
-            starBindingSource.DataSource = typeof(Models.Star);
             // 
             // imageList1
             // 
@@ -175,7 +172,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(661, 24);
+            menuStrip1.Size = new Size(867, 24);
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -388,14 +385,24 @@
             panel1.Controls.Add(distanceText);
             panel1.Controls.Add(stellarBox);
             panel1.Controls.Add(stellarText);
-            panel1.Controls.Add(ConstellationBox);
+            panel1.Controls.Add(constellationBox);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(nameBox);
             panel1.Controls.Add(nameText);
-            panel1.Location = new Point(27, 59);
+            panel1.Location = new Point(130, 59);
             panel1.Name = "panel1";
             panel1.Size = new Size(606, 275);
             panel1.TabIndex = 19;
+            // 
+            // searchButton
+            // 
+            searchButton.Location = new Point(526, 247);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 23);
+            searchButton.TabIndex = 20;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = true;
+            searchButton.Click += searchButton_Click;
             // 
             // coordinateBox
             // 
@@ -445,12 +452,12 @@
             stellarText.TabIndex = 4;
             stellarText.Text = "Stellar magnitude";
             // 
-            // ConstellationBox
+            // constellationBox
             // 
-            ConstellationBox.Location = new Point(161, 54);
-            ConstellationBox.Name = "ConstellationBox";
-            ConstellationBox.Size = new Size(400, 23);
-            ConstellationBox.TabIndex = 3;
+            constellationBox.Location = new Point(161, 54);
+            constellationBox.Name = "constellationBox";
+            constellationBox.Size = new Size(400, 23);
+            constellationBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -477,37 +484,47 @@
             nameText.TabIndex = 0;
             nameText.Text = "Name";
             // 
-            // searchButton
+            // resultList
             // 
-            searchButton.Location = new Point(526, 247);
-            searchButton.Name = "searchButton";
-            searchButton.Size = new Size(75, 23);
-            searchButton.TabIndex = 20;
-            searchButton.Text = "Search";
-            searchButton.UseVisualStyleBackColor = true;
+            resultList.Anchor = AnchorStyles.Top;
+            resultList.DataSource = starBindingSource;
+            resultList.DisplayMember = "Name";
+            resultList.FormattingEnabled = true;
+            resultList.ItemHeight = 15;
+            resultList.Location = new Point(130, 367);
+            resultList.Name = "resultList";
+            resultList.Size = new Size(606, 289);
+            resultList.TabIndex = 20;
+            resultList.ValueMember = "StellarMagnitude";
+            resultList.SelectedIndexChanged += resultList_SelectedIndexChanged;
+            resultList.DoubleClick += resultBox_DoubleClick;
+            // 
+            // starBindingSource
+            // 
+            starBindingSource.DataSource = typeof(Models.Star);
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(661, 402);
+            ClientSize = new Size(867, 669);
+            Controls.Add(resultList);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
-            MinimumSize = new Size(677, 441);
+            MinimumSize = new Size(677, 708);
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;
-            ((System.ComponentModel.ISupportInitialize)starBindingSource).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)starBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private BindingSource starBindingSource;
         private ImageList imageList1;
         private ToolStripMenuItem newToolStripMenuItem;
         private ToolStripMenuItem openToolStripMenuItem;
@@ -554,12 +571,14 @@
         private Label distanceText;
         private TextBox stellarBox;
         private Label stellarText;
-        private TextBox ConstellationBox;
+        private TextBox constellationBox;
         private Label label2;
         private TextBox nameBox;
         private Label nameText;
         private TextBox coordinateBox;
         private Label coordinateText;
         private Button searchButton;
+        private ListBox resultList;
+        private BindingSource starBindingSource;
     }
 }

@@ -6,11 +6,10 @@ namespace StarBook.Models
     {
         public Library() 
         {
-
+            Stars = new List<Star> ();
+            FillWithTestData(1000);
         }
-        
         public List<Star> Stars { get; set; }
-
         void FillWithTestData(int n)
         {
             Stars.Clear();
@@ -18,13 +17,12 @@ namespace StarBook.Models
             {
                 Stars.Add(new Star
                 {
-                    Name = $"Name{i}",
+                    Name = $"Star{i}",
                     Constellation = $"Constellation{i}",
-                    StellarMagnitude = $"Stellar magnitude{i}",
-                    Distance = $"Distance{i}",
-                    Coordinate = $"Coordinate{i}"
+                    StellarMagnitude = i,
+                    Distance = i,
+                    Coordinate = $"{i}"
                 });
-
             }
         }
 
@@ -36,8 +34,8 @@ namespace StarBook.Models
             {
                 if(s.Name.Contains(name) && 
                     s.Constellation.Contains(constallation) &&
-                    s.StellarMagnitude.Contains(stellarMagnitude)&&
-                    s.Distance.Contains(distance) &&
+                    s.StellarMagnitude.ToString().Contains(stellarMagnitude)&&
+                    s.Distance.ToString().Contains(distance) &&
                     s.Coordinate.Contains(coordinate))
                 {
                     result.Add(s);

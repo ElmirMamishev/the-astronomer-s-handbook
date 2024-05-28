@@ -4,8 +4,8 @@
     {
         public string Name { get; set; }
         public string Constellation { get; set; }
-        public string StellarMagnitude { get; set; }
-        public string Distance { get; set; }
+        public int StellarMagnitude { get; set; }
+        public int Distance { get; set; }
         public string Coordinate { get; set; }
         public string ViewCoordinate { get; set; }
         public string Time { get; set; }
