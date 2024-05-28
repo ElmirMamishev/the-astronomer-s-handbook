@@ -42,7 +42,6 @@
             printPreviewToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
             exitToolStripMenuItem = new ToolStripMenuItem();
-            button2 = new Button();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             newToolStripMenuItem1 = new ToolStripMenuItem();
@@ -73,8 +72,21 @@
             searchToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator8 = new ToolStripSeparator();
             aboutToolStripMenuItem = new ToolStripMenuItem();
+            panel1 = new Panel();
+            coordinateBox = new TextBox();
+            coordinateText = new Label();
+            distanceBox = new TextBox();
+            distanceText = new Label();
+            stellarBox = new TextBox();
+            stellarText = new Label();
+            ConstellationBox = new TextBox();
+            label2 = new Label();
+            nameBox = new TextBox();
+            nameText = new Label();
+            searchButton = new Button();
             ((System.ComponentModel.ISupportInitialize)starBindingSource).BeginInit();
             menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // starBindingSource
@@ -158,22 +170,12 @@
             exitToolStripMenuItem.Size = new Size(146, 22);
             exitToolStripMenuItem.Text = "E&xit";
             // 
-            // button2
-            // 
-            button2.Location = new Point(758, 603);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 17;
-            button2.Text = "Вийти";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(845, 24);
+            menuStrip1.Size = new Size(661, 24);
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -190,7 +192,7 @@
             newToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             newToolStripMenuItem1.Name = "newToolStripMenuItem1";
             newToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.N;
-            newToolStripMenuItem1.Size = new Size(180, 22);
+            newToolStripMenuItem1.Size = new Size(146, 22);
             newToolStripMenuItem1.Text = "&New";
             // 
             // openToolStripMenuItem1
@@ -199,13 +201,13 @@
             openToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             openToolStripMenuItem1.Name = "openToolStripMenuItem1";
             openToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.O;
-            openToolStripMenuItem1.Size = new Size(180, 22);
+            openToolStripMenuItem1.Size = new Size(146, 22);
             openToolStripMenuItem1.Text = "&Open";
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(177, 6);
+            toolStripSeparator3.Size = new Size(143, 6);
             // 
             // saveToolStripMenuItem1
             // 
@@ -213,19 +215,19 @@
             saveToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
             saveToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.S;
-            saveToolStripMenuItem1.Size = new Size(180, 22);
+            saveToolStripMenuItem1.Size = new Size(146, 22);
             saveToolStripMenuItem1.Text = "&Save";
             // 
             // saveAsToolStripMenuItem1
             // 
             saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
-            saveAsToolStripMenuItem1.Size = new Size(180, 22);
+            saveAsToolStripMenuItem1.Size = new Size(146, 22);
             saveAsToolStripMenuItem1.Text = "Save &As";
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(177, 6);
+            toolStripSeparator4.Size = new Size(143, 6);
             // 
             // printToolStripMenuItem1
             // 
@@ -233,7 +235,7 @@
             printToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             printToolStripMenuItem1.Name = "printToolStripMenuItem1";
             printToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.P;
-            printToolStripMenuItem1.Size = new Size(180, 22);
+            printToolStripMenuItem1.Size = new Size(146, 22);
             printToolStripMenuItem1.Text = "&Print";
             // 
             // printPreviewToolStripMenuItem1
@@ -241,18 +243,18 @@
             printPreviewToolStripMenuItem1.Image = (Image)resources.GetObject("printPreviewToolStripMenuItem1.Image");
             printPreviewToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             printPreviewToolStripMenuItem1.Name = "printPreviewToolStripMenuItem1";
-            printPreviewToolStripMenuItem1.Size = new Size(180, 22);
+            printPreviewToolStripMenuItem1.Size = new Size(146, 22);
             printPreviewToolStripMenuItem1.Text = "Print Pre&view";
             // 
             // toolStripSeparator5
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(177, 6);
+            toolStripSeparator5.Size = new Size(143, 6);
             // 
             // exitToolStripMenuItem1
             // 
             exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            exitToolStripMenuItem1.Size = new Size(180, 22);
+            exitToolStripMenuItem1.Size = new Size(146, 22);
             exitToolStripMenuItem1.Text = "E&xit";
             exitToolStripMenuItem1.Click += exitToolStripMenuItem1_Click;
             // 
@@ -267,20 +269,20 @@
             // 
             undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
-            undoToolStripMenuItem.Size = new Size(32, 19);
+            undoToolStripMenuItem.Size = new Size(144, 22);
             undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             redoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
-            redoToolStripMenuItem.Size = new Size(32, 19);
+            redoToolStripMenuItem.Size = new Size(144, 22);
             redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator6
             // 
             toolStripSeparator6.Name = "toolStripSeparator6";
-            toolStripSeparator6.Size = new Size(6, 6);
+            toolStripSeparator6.Size = new Size(141, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -288,7 +290,7 @@
             cutToolStripMenuItem.ImageTransparentColor = Color.Magenta;
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             cutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
-            cutToolStripMenuItem.Size = new Size(32, 19);
+            cutToolStripMenuItem.Size = new Size(144, 22);
             cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -297,7 +299,7 @@
             copyToolStripMenuItem.ImageTransparentColor = Color.Magenta;
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             copyToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            copyToolStripMenuItem.Size = new Size(32, 19);
+            copyToolStripMenuItem.Size = new Size(144, 22);
             copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -306,18 +308,18 @@
             pasteToolStripMenuItem.ImageTransparentColor = Color.Magenta;
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             pasteToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
-            pasteToolStripMenuItem.Size = new Size(32, 19);
+            pasteToolStripMenuItem.Size = new Size(144, 22);
             pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator7
             // 
             toolStripSeparator7.Name = "toolStripSeparator7";
-            toolStripSeparator7.Size = new Size(6, 6);
+            toolStripSeparator7.Size = new Size(141, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            selectAllToolStripMenuItem.Size = new Size(32, 19);
+            selectAllToolStripMenuItem.Size = new Size(144, 22);
             selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
@@ -330,13 +332,13 @@
             // customizeToolStripMenuItem
             // 
             customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            customizeToolStripMenuItem.Size = new Size(32, 19);
+            customizeToolStripMenuItem.Size = new Size(130, 22);
             customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(32, 19);
+            optionsToolStripMenuItem.Size = new Size(130, 22);
             optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem
@@ -349,45 +351,157 @@
             // contentsToolStripMenuItem
             // 
             contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            contentsToolStripMenuItem.Size = new Size(32, 19);
+            contentsToolStripMenuItem.Size = new Size(122, 22);
             contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(32, 19);
+            indexToolStripMenuItem.Size = new Size(122, 22);
             indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(32, 19);
+            searchToolStripMenuItem.Size = new Size(122, 22);
             searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(6, 6);
+            toolStripSeparator8.Size = new Size(119, 6);
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(32, 19);
+            aboutToolStripMenuItem.Size = new Size(122, 22);
             aboutToolStripMenuItem.Text = "&About...";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(searchButton);
+            panel1.Controls.Add(coordinateBox);
+            panel1.Controls.Add(coordinateText);
+            panel1.Controls.Add(distanceBox);
+            panel1.Controls.Add(distanceText);
+            panel1.Controls.Add(stellarBox);
+            panel1.Controls.Add(stellarText);
+            panel1.Controls.Add(ConstellationBox);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(nameBox);
+            panel1.Controls.Add(nameText);
+            panel1.Location = new Point(27, 59);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(606, 275);
+            panel1.TabIndex = 19;
+            // 
+            // coordinateBox
+            // 
+            coordinateBox.Location = new Point(161, 141);
+            coordinateBox.Name = "coordinateBox";
+            coordinateBox.Size = new Size(400, 23);
+            coordinateBox.TabIndex = 9;
+            // 
+            // coordinateText
+            // 
+            coordinateText.AutoSize = true;
+            coordinateText.Location = new Point(22, 149);
+            coordinateText.Name = "coordinateText";
+            coordinateText.Size = new Size(66, 15);
+            coordinateText.TabIndex = 8;
+            coordinateText.Text = "Coordinate";
+            // 
+            // distanceBox
+            // 
+            distanceBox.Location = new Point(161, 112);
+            distanceBox.Name = "distanceBox";
+            distanceBox.Size = new Size(400, 23);
+            distanceBox.TabIndex = 7;
+            // 
+            // distanceText
+            // 
+            distanceText.AutoSize = true;
+            distanceText.Location = new Point(22, 120);
+            distanceText.Name = "distanceText";
+            distanceText.Size = new Size(52, 15);
+            distanceText.TabIndex = 6;
+            distanceText.Text = "Distance";
+            // 
+            // stellarBox
+            // 
+            stellarBox.Location = new Point(161, 83);
+            stellarBox.Name = "stellarBox";
+            stellarBox.Size = new Size(400, 23);
+            stellarBox.TabIndex = 5;
+            // 
+            // stellarText
+            // 
+            stellarText.AutoSize = true;
+            stellarText.Location = new Point(23, 91);
+            stellarText.Name = "stellarText";
+            stellarText.Size = new Size(100, 15);
+            stellarText.TabIndex = 4;
+            stellarText.Text = "Stellar magnitude";
+            // 
+            // ConstellationBox
+            // 
+            ConstellationBox.Location = new Point(161, 54);
+            ConstellationBox.Name = "ConstellationBox";
+            ConstellationBox.Size = new Size(400, 23);
+            ConstellationBox.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(22, 62);
+            label2.Name = "label2";
+            label2.Size = new Size(77, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Constellation";
+            // 
+            // nameBox
+            // 
+            nameBox.Location = new Point(161, 25);
+            nameBox.Name = "nameBox";
+            nameBox.Size = new Size(400, 23);
+            nameBox.TabIndex = 1;
+            // 
+            // nameText
+            // 
+            nameText.AutoSize = true;
+            nameText.Location = new Point(22, 33);
+            nameText.Name = "nameText";
+            nameText.Size = new Size(39, 15);
+            nameText.TabIndex = 0;
+            nameText.Text = "Name";
+            // 
+            // searchButton
+            // 
+            searchButton.Location = new Point(526, 247);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 23);
+            searchButton.TabIndex = 20;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(845, 643);
-            Controls.Add(button2);
+            ClientSize = new Size(661, 402);
+            Controls.Add(panel1);
             Controls.Add(menuStrip1);
+            MinimumSize = new Size(677, 441);
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)starBindingSource).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -405,7 +519,6 @@
         private ToolStripMenuItem printPreviewToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem exitToolStripMenuItem;
-        private Button button2;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem newToolStripMenuItem1;
@@ -436,5 +549,17 @@
         private ToolStripMenuItem searchToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator8;
         private ToolStripMenuItem aboutToolStripMenuItem;
+        private Panel panel1;
+        private TextBox distanceBox;
+        private Label distanceText;
+        private TextBox stellarBox;
+        private Label stellarText;
+        private TextBox ConstellationBox;
+        private Label label2;
+        private TextBox nameBox;
+        private Label nameText;
+        private TextBox coordinateBox;
+        private Label coordinateText;
+        private Button searchButton;
     }
 }

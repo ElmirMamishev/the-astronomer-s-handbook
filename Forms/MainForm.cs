@@ -11,15 +11,9 @@ namespace StarBook
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

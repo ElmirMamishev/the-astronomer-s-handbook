@@ -2,11 +2,12 @@
 {
     public class Star
     {
-        public string StarName { get; set; }
-        public string StarConstellation { get; set; }
-        public string StarCoordinate { get; set; }
-        public string StarDistance { get; set; }
-        public string StarViewCoordinate { get; set; }
-        public string StarTime { get; set; }
+        public string Name { get; set; }
+        public string Constellation { get; set; }
+        public string StellarMagnitude { get; set; }
+        public string Distance { get; set; }
+        public string Coordinate { get; set; }
+        public string ViewCoordinate { get; set; }
+        public string Time { get; set; }
     }
 }
