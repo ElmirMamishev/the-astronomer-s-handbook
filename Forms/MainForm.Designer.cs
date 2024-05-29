@@ -50,12 +50,6 @@
             saveToolStripMenuItem1 = new ToolStripMenuItem();
             toolStripSeparator4 = new ToolStripSeparator();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
-            helpToolStripMenuItem = new ToolStripMenuItem();
-            contentsToolStripMenuItem = new ToolStripMenuItem();
-            indexToolStripMenuItem = new ToolStripMenuItem();
-            searchToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator8 = new ToolStripSeparator();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             addButton = new Button();
             minuteNumericUpDown = new NumericUpDown();
@@ -162,7 +156,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(647, 24);
@@ -173,14 +167,14 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createNewToolStripMenuItem, toolStripSeparator5, openToolStripMenuItem1, toolStripSeparator3, saveToolStripMenuItem1, toolStripSeparator4, exitToolStripMenuItem1 });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
-            fileToolStripMenuItem.Text = "&File";
+            fileToolStripMenuItem.Size = new Size(48, 20);
+            fileToolStripMenuItem.Text = "&Файл";
             // 
             // createNewToolStripMenuItem
             // 
             createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            createNewToolStripMenuItem.Size = new Size(146, 22);
-            createNewToolStripMenuItem.Text = "Create new";
+            createNewToolStripMenuItem.Size = new Size(180, 22);
+            createNewToolStripMenuItem.Text = "Створити";
             createNewToolStripMenuItem.Click += createNewToolStripMenuItem_Click;
             // 
             // toolStripSeparator5
@@ -194,8 +188,8 @@
             openToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             openToolStripMenuItem1.Name = "openToolStripMenuItem1";
             openToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.O;
-            openToolStripMenuItem1.Size = new Size(146, 22);
-            openToolStripMenuItem1.Text = "&Open";
+            openToolStripMenuItem1.Size = new Size(180, 22);
+            openToolStripMenuItem1.Text = "&Відкирити";
             openToolStripMenuItem1.Click += openToolStripMenuItem1_Click;
             // 
             // toolStripSeparator3
@@ -209,8 +203,8 @@
             saveToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
             saveToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.S;
-            saveToolStripMenuItem1.Size = new Size(146, 22);
-            saveToolStripMenuItem1.Text = "&Save";
+            saveToolStripMenuItem1.Size = new Size(180, 22);
+            saveToolStripMenuItem1.Text = "&Зберегти";
             saveToolStripMenuItem1.Click += saveToolStripMenuItem1_Click;
             // 
             // toolStripSeparator4
@@ -221,45 +215,9 @@
             // exitToolStripMenuItem1
             // 
             exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            exitToolStripMenuItem1.Size = new Size(146, 22);
-            exitToolStripMenuItem1.Text = "E&xit";
+            exitToolStripMenuItem1.Size = new Size(180, 22);
+            exitToolStripMenuItem1.Text = "В&ийти";
             exitToolStripMenuItem1.Click += exitToolStripMenuItem1_Click;
-            // 
-            // helpToolStripMenuItem
-            // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contentsToolStripMenuItem, indexToolStripMenuItem, searchToolStripMenuItem, toolStripSeparator8, aboutToolStripMenuItem });
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(44, 20);
-            helpToolStripMenuItem.Text = "&Help";
-            // 
-            // contentsToolStripMenuItem
-            // 
-            contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            contentsToolStripMenuItem.Size = new Size(122, 22);
-            contentsToolStripMenuItem.Text = "&Contents";
-            // 
-            // indexToolStripMenuItem
-            // 
-            indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(122, 22);
-            indexToolStripMenuItem.Text = "&Index";
-            // 
-            // searchToolStripMenuItem
-            // 
-            searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(122, 22);
-            searchToolStripMenuItem.Text = "&Search";
-            // 
-            // toolStripSeparator8
-            // 
-            toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(119, 6);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(122, 22);
-            aboutToolStripMenuItem.Text = "&About...";
             // 
             // panel1
             // 
@@ -294,7 +252,7 @@
             addButton.Name = "addButton";
             addButton.Size = new Size(75, 23);
             addButton.TabIndex = 21;
-            addButton.Text = "Add";
+            addButton.Text = "Додати";
             addButton.UseVisualStyleBackColor = true;
             addButton.Click += addButton_Click;
             // 
@@ -320,7 +278,7 @@
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(75, 23);
             searchButton.TabIndex = 12;
-            searchButton.Text = "Search";
+            searchButton.Text = "Пошук";
             searchButton.UseVisualStyleBackColor = true;
             searchButton.Click += searchButton_Click_2;
             // 
@@ -338,9 +296,9 @@
             timeToView.AutoSize = true;
             timeToView.Location = new Point(23, 178);
             timeToView.Name = "timeToView";
-            timeToView.Size = new Size(33, 15);
+            timeToView.Size = new Size(115, 15);
             timeToView.TabIndex = 22;
-            timeToView.Text = "Time";
+            timeToView.Text = "Час спостереження";
             // 
             // coordinateBox2
             // 
@@ -361,9 +319,9 @@
             coordinateText.AutoSize = true;
             coordinateText.Location = new Point(22, 149);
             coordinateText.Name = "coordinateText";
-            coordinateText.Size = new Size(66, 15);
+            coordinateText.Size = new Size(73, 15);
             coordinateText.TabIndex = 8;
-            coordinateText.Text = "Coordinate";
+            coordinateText.Text = "Координати";
             // 
             // distanceBox
             // 
@@ -377,9 +335,9 @@
             distanceText.AutoSize = true;
             distanceText.Location = new Point(22, 120);
             distanceText.Name = "distanceText";
-            distanceText.Size = new Size(52, 15);
+            distanceText.Size = new Size(53, 15);
             distanceText.TabIndex = 6;
-            distanceText.Text = "Distance";
+            distanceText.Text = "Відстань";
             // 
             // stellarBox
             // 
@@ -393,9 +351,9 @@
             stellarText.AutoSize = true;
             stellarText.Location = new Point(22, 91);
             stellarText.Name = "stellarText";
-            stellarText.Size = new Size(100, 15);
+            stellarText.Size = new Size(103, 15);
             stellarText.TabIndex = 4;
-            stellarText.Text = "Stellar magnitude";
+            stellarText.Text = "Зоряна величина";
             // 
             // constellationBox
             // 
@@ -409,9 +367,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(22, 62);
             label2.Name = "label2";
-            label2.Size = new Size(77, 15);
+            label2.Size = new Size(45, 15);
             label2.TabIndex = 2;
-            label2.Text = "Constellation";
+            label2.Text = "Сузір'я";
             // 
             // nameBox
             // 
@@ -427,7 +385,7 @@
             nameText.Name = "nameText";
             nameText.Size = new Size(39, 15);
             nameText.TabIndex = 0;
-            nameText.Text = "Name";
+            nameText.Text = "Назва";
             // 
             // resultList
             // 
@@ -488,12 +446,6 @@
         private ToolStripMenuItem saveToolStripMenuItem1;
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripMenuItem exitToolStripMenuItem1;
-        private ToolStripMenuItem helpToolStripMenuItem;
-        private ToolStripMenuItem contentsToolStripMenuItem;
-        private ToolStripMenuItem indexToolStripMenuItem;
-        private ToolStripMenuItem searchToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator8;
-        private ToolStripMenuItem aboutToolStripMenuItem;
         private Panel panel1;
         private TextBox distanceBox;
         private Label distanceText;

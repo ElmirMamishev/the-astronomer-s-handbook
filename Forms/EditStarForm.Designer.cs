@@ -56,7 +56,7 @@
             nameTextEdit.Name = "nameTextEdit";
             nameTextEdit.Size = new Size(39, 15);
             nameTextEdit.TabIndex = 0;
-            nameTextEdit.Text = "Name";
+            nameTextEdit.Text = "Назва";
             // 
             // nameEditBox
             // 
@@ -78,9 +78,9 @@
             constellationEditText.AutoSize = true;
             constellationEditText.Location = new Point(55, 70);
             constellationEditText.Name = "constellationEditText";
-            constellationEditText.Size = new Size(77, 15);
+            constellationEditText.Size = new Size(45, 15);
             constellationEditText.TabIndex = 2;
-            constellationEditText.Text = "Constellation";
+            constellationEditText.Text = "Сузір'я";
             // 
             // stellarEditBox
             // 
@@ -95,9 +95,9 @@
             stellarEditText.AutoSize = true;
             stellarEditText.Location = new Point(55, 99);
             stellarEditText.Name = "stellarEditText";
-            stellarEditText.Size = new Size(100, 15);
+            stellarEditText.Size = new Size(103, 15);
             stellarEditText.TabIndex = 4;
-            stellarEditText.Text = "Stellar magnitude";
+            stellarEditText.Text = "Зоряна величина";
             // 
             // distanceEditBox
             // 
@@ -113,18 +113,18 @@
             distanceEditText.AutoSize = true;
             distanceEditText.Location = new Point(55, 128);
             distanceEditText.Name = "distanceEditText";
-            distanceEditText.Size = new Size(52, 15);
+            distanceEditText.Size = new Size(53, 15);
             distanceEditText.TabIndex = 6;
-            distanceEditText.Text = "Distance";
+            distanceEditText.Text = "Відстань";
             // 
             // coordinateEditText
             // 
             coordinateEditText.AutoSize = true;
             coordinateEditText.Location = new Point(55, 157);
             coordinateEditText.Name = "coordinateEditText";
-            coordinateEditText.Size = new Size(66, 15);
+            coordinateEditText.Size = new Size(73, 15);
             coordinateEditText.TabIndex = 8;
-            coordinateEditText.Text = "Coordinate";
+            coordinateEditText.Text = "Координати";
             // 
             // cancelButtonEdit
             // 
@@ -133,7 +133,7 @@
             cancelButtonEdit.Name = "cancelButtonEdit";
             cancelButtonEdit.Size = new Size(75, 23);
             cancelButtonEdit.TabIndex = 13;
-            cancelButtonEdit.Text = "Cancel";
+            cancelButtonEdit.Text = "Відмінити";
             cancelButtonEdit.UseVisualStyleBackColor = true;
             // 
             // okButtonEdit
@@ -143,7 +143,7 @@
             okButtonEdit.Name = "okButtonEdit";
             okButtonEdit.Size = new Size(75, 23);
             okButtonEdit.TabIndex = 12;
-            okButtonEdit.Text = "Ok";
+            okButtonEdit.Text = "Ок";
             okButtonEdit.UseVisualStyleBackColor = true;
             // 
             // coordinateEditBox1
@@ -190,9 +190,9 @@
             timeToViewEditText.AutoSize = true;
             timeToViewEditText.Location = new Point(55, 186);
             timeToViewEditText.Name = "timeToViewEditText";
-            timeToViewEditText.Size = new Size(33, 15);
+            timeToViewEditText.Size = new Size(27, 15);
             timeToViewEditText.TabIndex = 26;
-            timeToViewEditText.Text = "Time";
+            timeToViewEditText.Text = "Час";
             // 
             // EditStarForm
             // 

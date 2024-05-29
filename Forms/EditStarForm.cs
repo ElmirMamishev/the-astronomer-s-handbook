@@ -34,7 +34,7 @@ namespace StarBook.Forms
         {
             if (nameEditBox.Text.Trim().Length == 0)
             {
-                MessageBox.Show("Name can't be empty.");
+                MessageBox.Show("Назва не може бути пустою.");
                 e.Cancel = true;
             }
         }
@@ -44,7 +44,7 @@ namespace StarBook.Forms
             bool isNumber = int.TryParse(distanceEditBox.Text, out int distance);
             if (!isNumber || distance < 0)
             {
-                MessageBox.Show("Distance must be a number more then 0");
+                MessageBox.Show("Відстань має бути числом більше 0.");
                 e.Cancel = true;
             }
         }
@@ -52,9 +52,9 @@ namespace StarBook.Forms
         private void stellarBoxEdit_Validating(object sender, CancelEventArgs e)
         {
             bool isNumber = int.TryParse(stellarEditBox.Text, out int magnitude);
-            if (!isNumber || magnitude < 0)
+            if (!isNumber)
             {
-                MessageBox.Show("Stellar magnitude must be a number more then 0");
+                MessageBox.Show("Зоряна величина має бути числом.");
                 e.Cancel = true;
             }
         }
@@ -66,7 +66,6 @@ namespace StarBook.Forms
             {
                 return CurrentStar;
             }
-
             return null;
         }
     }

@@ -54,7 +54,6 @@ namespace StarBook
                coordinateBox2.Text, (int)hoursNumericUpDown.Value,
                (int)minuteNumericUpDown.Value);
             starBindingSource.DataSource = result;
-
         }
 
         private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
