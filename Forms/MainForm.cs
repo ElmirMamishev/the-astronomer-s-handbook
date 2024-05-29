@@ -25,7 +25,7 @@ namespace StarBook
             if (resultList.SelectedItems.Count > 0)
             {
                 Star star = resultList?.SelectedItem as Star;
-                var starEditForm = new StarEditForm(star);
+                var starEditForm = new EditStarForm(star);
                 if (starEditForm.ShowDialog() == DialogResult.OK)
                 {
                     searchButton_Click_2(null, null);
@@ -47,9 +47,20 @@ namespace StarBook
         private void searchButton_Click_2(object sender, EventArgs e)
         {
             var result = library.Search(nameBox.Text, constellationBox.Text,
-               stellarBox.Text, distanceBox.Text, coordinateBox1.Text,
-               coordinateBox2.Text, coordinateBox3.Text, (int)hoursNumericUpDown.Value, (int)minuteNumericUpDown.Value);
+               stellarBox.Text, distanceBox.Text, coordinateBox1.Text, 
+               coordinateBox2.Text, (int)hoursNumericUpDown.Value, 
+               (int)minuteNumericUpDown.Value);
             starBindingSource.DataSource = result;
+        }
+
+        private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new CreateStarForm();
+            var result = form.Open();
+            if (result != null)
+            {
+                library.AddStar(result);
+            }
         }
     }
 

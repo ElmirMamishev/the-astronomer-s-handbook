@@ -43,11 +43,12 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
+            createNewToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator5 = new ToolStripSeparator();
             openToolStripMenuItem1 = new ToolStripMenuItem();
             toolStripSeparator3 = new ToolStripSeparator();
             saveToolStripMenuItem1 = new ToolStripMenuItem();
             toolStripSeparator4 = new ToolStripSeparator();
-            toolStripSeparator5 = new ToolStripSeparator();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             contentsToolStripMenuItem = new ToolStripMenuItem();
@@ -60,9 +61,6 @@
             hoursNumericUpDown = new NumericUpDown();
             searchButton = new Button();
             label1 = new Label();
-            timeBox1 = new TextBox();
-            timeBox = new TextBox();
-            coordinateBox3 = new TextBox();
             timeToView = new Label();
             coordinateBox2 = new TextBox();
             coordinateBox1 = new TextBox();
@@ -77,6 +75,7 @@
             nameText = new Label();
             resultList = new ListBox();
             starBindingSource = new BindingSource(components);
+            addButton = new Button();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)minuteNumericUpDown).BeginInit();
@@ -172,10 +171,22 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem1, toolStripSeparator3, saveToolStripMenuItem1, toolStripSeparator4, toolStripSeparator5, exitToolStripMenuItem1 });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { createNewToolStripMenuItem, toolStripSeparator5, openToolStripMenuItem1, toolStripSeparator3, saveToolStripMenuItem1, toolStripSeparator4, exitToolStripMenuItem1 });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "&File";
+            // 
+            // createNewToolStripMenuItem
+            // 
+            createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
+            createNewToolStripMenuItem.Size = new Size(146, 22);
+            createNewToolStripMenuItem.Text = "Create new";
+            createNewToolStripMenuItem.Click += createNewToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator5
+            // 
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            toolStripSeparator5.Size = new Size(143, 6);
             // 
             // openToolStripMenuItem1
             // 
@@ -206,11 +217,6 @@
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
             toolStripSeparator4.Size = new Size(143, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(143, 6);
             // 
             // exitToolStripMenuItem1
             // 
@@ -263,9 +269,6 @@
             panel1.Controls.Add(hoursNumericUpDown);
             panel1.Controls.Add(searchButton);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(timeBox1);
-            panel1.Controls.Add(timeBox);
-            panel1.Controls.Add(coordinateBox3);
             panel1.Controls.Add(timeToView);
             panel1.Controls.Add(coordinateBox2);
             panel1.Controls.Add(coordinateBox1);
@@ -285,7 +288,7 @@
             // 
             // minuteNumericUpDown
             // 
-            minuteNumericUpDown.Location = new Point(385, 199);
+            minuteNumericUpDown.Location = new Point(368, 170);
             minuteNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteNumericUpDown.Name = "minuteNumericUpDown";
             minuteNumericUpDown.Size = new Size(104, 23);
@@ -293,7 +296,7 @@
             // 
             // hoursNumericUpDown
             // 
-            hoursNumericUpDown.Location = new Point(230, 199);
+            hoursNumericUpDown.Location = new Point(250, 170);
             hoursNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursNumericUpDown.Name = "hoursNumericUpDown";
             hoursNumericUpDown.Size = new Size(104, 23);
@@ -318,27 +321,6 @@
             label1.TabIndex = 21;
             label1.Text = ":";
             // 
-            // timeBox1
-            // 
-            timeBox1.Location = new Point(385, 170);
-            timeBox1.Name = "timeBox1";
-            timeBox1.Size = new Size(104, 23);
-            timeBox1.TabIndex = 9;
-            // 
-            // timeBox
-            // 
-            timeBox.Location = new Point(230, 170);
-            timeBox.Name = "timeBox";
-            timeBox.Size = new Size(104, 23);
-            timeBox.TabIndex = 8;
-            // 
-            // coordinateBox3
-            // 
-            coordinateBox3.Location = new Point(457, 141);
-            coordinateBox3.Name = "coordinateBox3";
-            coordinateBox3.Size = new Size(104, 23);
-            coordinateBox3.TabIndex = 7;
-            // 
             // timeToView
             // 
             timeToView.AutoSize = true;
@@ -350,16 +332,16 @@
             // 
             // coordinateBox2
             // 
-            coordinateBox2.Location = new Point(309, 141);
+            coordinateBox2.Location = new Point(368, 141);
             coordinateBox2.Name = "coordinateBox2";
-            coordinateBox2.Size = new Size(104, 23);
+            coordinateBox2.Size = new Size(193, 23);
             coordinateBox2.TabIndex = 6;
             // 
             // coordinateBox1
             // 
             coordinateBox1.Location = new Point(161, 141);
             coordinateBox1.Name = "coordinateBox1";
-            coordinateBox1.Size = new Size(104, 23);
+            coordinateBox1.Size = new Size(193, 23);
             coordinateBox1.TabIndex = 5;
             // 
             // coordinateText
@@ -453,11 +435,21 @@
             // 
             starBindingSource.DataSource = typeof(Models.Star);
             // 
+            // addButton
+            // 
+            addButton.Location = new Point(780, 634);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(75, 23);
+            addButton.TabIndex = 21;
+            addButton.Text = "Add";
+            addButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(867, 669);
+            Controls.Add(addButton);
             Controls.Add(resultList);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
@@ -492,7 +484,6 @@
         private ToolStripMenuItem openToolStripMenuItem1;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem saveToolStripMenuItem1;
-        private ToolStripSeparator toolStripSeparator4;
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripMenuItem exitToolStripMenuItem1;
         private ToolStripMenuItem helpToolStripMenuItem;
@@ -514,15 +505,15 @@
         private Label coordinateText;
         private ListBox resultList;
         private BindingSource starBindingSource;
-        private TextBox coordinateBox3;
         private TextBox coordinateBox2;
         private Button searchButton_Click;
-        private TextBox timeBox1;
-        private TextBox timeBox;
         private Label timeToView;
         private Label label1;
         private Button searchButton;
         private NumericUpDown minuteNumericUpDown;
         private NumericUpDown hoursNumericUpDown;
+        private Button addButton;
+        private ToolStripMenuItem createNewToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator4;
     }
 }
