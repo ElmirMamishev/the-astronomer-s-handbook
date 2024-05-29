@@ -26,17 +26,15 @@ namespace StarBook
             {
                 Star star = resultList?.SelectedItem as Star;
                 var starEditForm = new EditStarForm(star);
-                if (starEditForm.ShowDialog() == DialogResult.OK)
-                {
-                    searchButton_Click_2(null, null);
-                }
+                starEditForm.Open();
+                Search();
             };
         }
         const string PATH_TO_DATA = ".\\library.txt";
 
         private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            librarian.SaveData(PATH_TO_DATA);
+            librarian.SaveData(library, PATH_TO_DATA);
         }
 
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -46,21 +44,33 @@ namespace StarBook
 
         private void searchButton_Click_2(object sender, EventArgs e)
         {
+            Search();
+        }
+
+        private void Search()
+        {
             var result = library.Search(nameBox.Text, constellationBox.Text,
-               stellarBox.Text, distanceBox.Text, coordinateBox1.Text, 
-               coordinateBox2.Text, (int)hoursNumericUpDown.Value, 
+               stellarBox.Text, distanceBox.Text, coordinateBox1.Text,
+               coordinateBox2.Text, (int)hoursNumericUpDown.Value,
                (int)minuteNumericUpDown.Value);
             starBindingSource.DataSource = result;
+
         }
 
         private void createNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new CreateStarForm();
-            var result = form.Open();
-            if (result != null)
-            {
-                library.AddStar(result);
-            }
+            var starEditForm = new EditStarForm();
+            var newStar = starEditForm.Open();
+            library.AddStar(newStar);
+            Search();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            var starEditForm = new EditStarForm();
+            var newStar = starEditForm.Open();
+            library.AddStar(newStar);
+            Search();
         }
     }
 

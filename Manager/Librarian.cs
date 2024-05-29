@@ -10,9 +10,9 @@ namespace StarBook.Manager
 {
     public class Librarian
     {
-        public void SaveData(string path)
+        public void SaveData(Library library, string path)
         {
-            var jsonString = JsonSerializer.Serialize(this);
+            var jsonString = JsonSerializer.Serialize(library);
             File.WriteAllText(path, jsonString);
         }
 

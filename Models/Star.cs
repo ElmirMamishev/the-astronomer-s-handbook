@@ -8,8 +8,9 @@
         public int Distance { get; set; }
         public int CoordinateX { get; set; }
         public int CoordinateY { get; set; }
-        public string ViewCoordinate { get; set; }
-        public TimeOnly StartTime { get; set; }
-        public TimeOnly EndTime { get; set; }
+        public int StartMinute { get; set; }
+        public int StartHour { get; set; }
+        public int EndMinute { get; set; }
+        public int EndHour { get; set; }
     }
 }

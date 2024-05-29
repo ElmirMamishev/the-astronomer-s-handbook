@@ -145,7 +145,6 @@
             okButtonEdit.TabIndex = 12;
             okButtonEdit.Text = "Ok";
             okButtonEdit.UseVisualStyleBackColor = true;
-            okButtonEdit.Click += okButtonEdit_Click;
             // 
             // coordinateEditBox1
             // 

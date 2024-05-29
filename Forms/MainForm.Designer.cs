@@ -57,6 +57,7 @@
             toolStripSeparator8 = new ToolStripSeparator();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            addButton = new Button();
             minuteNumericUpDown = new NumericUpDown();
             hoursNumericUpDown = new NumericUpDown();
             searchButton = new Button();
@@ -75,7 +76,6 @@
             nameText = new Label();
             resultList = new ListBox();
             starBindingSource = new BindingSource(components);
-            addButton = new Button();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)minuteNumericUpDown).BeginInit();
@@ -165,7 +165,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(867, 24);
+            menuStrip1.Size = new Size(647, 24);
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -265,6 +265,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(addButton);
             panel1.Controls.Add(minuteNumericUpDown);
             panel1.Controls.Add(hoursNumericUpDown);
             panel1.Controls.Add(searchButton);
@@ -281,10 +282,21 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(nameBox);
             panel1.Controls.Add(nameText);
-            panel1.Location = new Point(130, 59);
+            panel1.Location = new Point(28, 27);
             panel1.Name = "panel1";
-            panel1.Size = new Size(606, 275);
+            panel1.Size = new Size(586, 274);
             panel1.TabIndex = 19;
+            // 
+            // addButton
+            // 
+            addButton.Anchor = AnchorStyles.Top;
+            addButton.Location = new Point(425, 246);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(75, 23);
+            addButton.TabIndex = 21;
+            addButton.Text = "Add";
+            addButton.UseVisualStyleBackColor = true;
+            addButton.Click += addButton_Click;
             // 
             // minuteNumericUpDown
             // 
@@ -304,7 +316,7 @@
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(526, 247);
+            searchButton.Location = new Point(506, 246);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(75, 23);
             searchButton.TabIndex = 12;
@@ -424,9 +436,9 @@
             resultList.DisplayMember = "Name";
             resultList.FormattingEnabled = true;
             resultList.ItemHeight = 15;
-            resultList.Location = new Point(130, 367);
+            resultList.Location = new Point(28, 307);
             resultList.Name = "resultList";
-            resultList.Size = new Size(606, 289);
+            resultList.Size = new Size(586, 274);
             resultList.TabIndex = 20;
             resultList.ValueMember = "StellarMagnitude";
             resultList.DoubleClick += resultBox_DoubleClick;
@@ -435,25 +447,15 @@
             // 
             starBindingSource.DataSource = typeof(Models.Star);
             // 
-            // addButton
-            // 
-            addButton.Location = new Point(780, 634);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 21;
-            addButton.Text = "Add";
-            addButton.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(867, 669);
-            Controls.Add(addButton);
+            ClientSize = new Size(647, 585);
             Controls.Add(resultList);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
-            MinimumSize = new Size(677, 708);
+            MinimumSize = new Size(663, 624);
             Name = "MainForm";
             Text = "MainForm";
             menuStrip1.ResumeLayout(false);

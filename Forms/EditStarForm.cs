@@ -13,32 +13,21 @@ namespace StarBook.Forms
 {
     public partial class EditStarForm : Form
     {
-        readonly Star star = new Star();
-        public EditStarForm(Star star)
+        readonly Star CurrentStar;
+
+        public EditStarForm(Star star = null)
         {
             InitializeComponent();
+            this.CurrentStar = star ?? new Star();
 
-            this.star = star;
-            nameEditBox.Text = star.Name.ToString();
-            constellationEditBox.Text = star.Constellation.ToString();
-            stellarEditBox.Text = star.StellarMagnitude.ToString();
-            distanceEditBox.Text = star.Distance.ToString();
-            coordinateEditBox1.Text = star.CoordinateX.ToString();
-            coordinateEditBox2.Text = star.CoordinateY.ToString();
-            hoursEditNumericUpDown.Text = star.StartTime.Hour.ToString();
-            minuteEditNumericUpDown.Text = star.StartTime.Minute.ToString();
-        }
-
-        private void okButtonEdit_Click(object sender, EventArgs e)
-        {
-            star.Name = nameEditBox.Text;
-            star.Constellation = constellationEditBox.Text;
-            star.StellarMagnitude = Convert.ToInt32(stellarEditBox.Text);
-            star.Distance = Convert.ToInt32(distanceEditBox.Text);
-            star.CoordinateX = Convert.ToInt32(coordinateEditBox1.Text);
-            star.CoordinateY = Convert.ToInt32(coordinateEditBox2.Text);
-            star.StartTime =  new TimeOnly ((int)hoursEditNumericUpDown.Value);
-            star.StartTime = new TimeOnly((int)minuteEditNumericUpDown.Value);
+            nameEditBox.DataBindings.Add("Text", CurrentStar, "Name");
+            constellationEditBox.DataBindings.Add("Text", CurrentStar, "Constellation");
+            stellarEditBox.DataBindings.Add("Text", CurrentStar, "StellarMagnitude");
+            distanceEditBox.DataBindings.Add("Text", CurrentStar, "Distance");
+            coordinateEditBox1.DataBindings.Add("Text", CurrentStar, "CoordinateX");
+            coordinateEditBox2.DataBindings.Add("Text", CurrentStar, "CoordinateY");
+            hoursEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartHour");
+            minuteEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartMinute");
         }
 
         private void nameBoxEdit_Validating(object sender, CancelEventArgs e)
@@ -68,6 +57,17 @@ namespace StarBook.Forms
                 MessageBox.Show("Stellar magnitude must be a number more then 0");
                 e.Cancel = true;
             }
+        }
+
+        public Star Open()
+        {
+            ShowDialog();
+            if (DialogResult == DialogResult.OK)
+            {
+                return CurrentStar;
+            }
+
+            return null;
         }
     }
 }
