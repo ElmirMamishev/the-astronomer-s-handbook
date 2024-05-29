@@ -33,5 +33,24 @@ namespace StarBook.Forms
             star.Distance = Convert.ToInt32(distanceBoxEdit.Text);
             star.Coordinate = coordinateBoxEdit.Text;
         }
+
+        private void nameBoxEdit_Validating(object sender, CancelEventArgs e)
+        {
+            if (nameBoxEdit.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Name can't be empty.");
+                e.Cancel = true;
+            }
+        }
+
+        private void distanceBoxEdit_Validating(object sender, CancelEventArgs e)
+        {
+            bool isNumber = int.TryParse(distanceBoxEdit.Text, out int distance);
+            if (!isNumber || distance < 0)
+            {
+                MessageBox.Show("Distance must be a number more then 0");
+                e.Cancel = true;
+            }
+        }
     }
 }

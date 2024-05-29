@@ -43,28 +43,12 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
-            newToolStripMenuItem1 = new ToolStripMenuItem();
             openToolStripMenuItem1 = new ToolStripMenuItem();
             toolStripSeparator3 = new ToolStripSeparator();
             saveToolStripMenuItem1 = new ToolStripMenuItem();
-            saveAsToolStripMenuItem1 = new ToolStripMenuItem();
             toolStripSeparator4 = new ToolStripSeparator();
-            printToolStripMenuItem1 = new ToolStripMenuItem();
-            printPreviewToolStripMenuItem1 = new ToolStripMenuItem();
             toolStripSeparator5 = new ToolStripSeparator();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
-            editToolStripMenuItem = new ToolStripMenuItem();
-            undoToolStripMenuItem = new ToolStripMenuItem();
-            redoToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator6 = new ToolStripSeparator();
-            cutToolStripMenuItem = new ToolStripMenuItem();
-            copyToolStripMenuItem = new ToolStripMenuItem();
-            pasteToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator7 = new ToolStripSeparator();
-            selectAllToolStripMenuItem = new ToolStripMenuItem();
-            toolsToolStripMenuItem = new ToolStripMenuItem();
-            customizeToolStripMenuItem = new ToolStripMenuItem();
-            optionsToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             contentsToolStripMenuItem = new ToolStripMenuItem();
             indexToolStripMenuItem = new ToolStripMenuItem();
@@ -72,8 +56,16 @@
             toolStripSeparator8 = new ToolStripSeparator();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
+            minuteNumericUpDown = new NumericUpDown();
+            hoursNumericUpDown = new NumericUpDown();
             searchButton = new Button();
-            coordinateBox = new TextBox();
+            label1 = new Label();
+            timeBox1 = new TextBox();
+            timeBox = new TextBox();
+            coordinateBox3 = new TextBox();
+            timeToView = new Label();
+            coordinateBox2 = new TextBox();
+            coordinateBox1 = new TextBox();
             coordinateText = new Label();
             distanceBox = new TextBox();
             distanceText = new Label();
@@ -87,6 +79,8 @@
             starBindingSource = new BindingSource(components);
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)minuteNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)hoursNumericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)starBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -169,7 +163,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, toolsToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(867, 24);
@@ -178,19 +172,10 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem1, openToolStripMenuItem1, toolStripSeparator3, saveToolStripMenuItem1, saveAsToolStripMenuItem1, toolStripSeparator4, printToolStripMenuItem1, printPreviewToolStripMenuItem1, toolStripSeparator5, exitToolStripMenuItem1 });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem1, toolStripSeparator3, saveToolStripMenuItem1, toolStripSeparator4, toolStripSeparator5, exitToolStripMenuItem1 });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "&File";
-            // 
-            // newToolStripMenuItem1
-            // 
-            newToolStripMenuItem1.Image = (Image)resources.GetObject("newToolStripMenuItem1.Image");
-            newToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
-            newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            newToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.N;
-            newToolStripMenuItem1.Size = new Size(146, 22);
-            newToolStripMenuItem1.Text = "&New";
             // 
             // openToolStripMenuItem1
             // 
@@ -200,6 +185,7 @@
             openToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.O;
             openToolStripMenuItem1.Size = new Size(146, 22);
             openToolStripMenuItem1.Text = "&Open";
+            openToolStripMenuItem1.Click += openToolStripMenuItem1_Click;
             // 
             // toolStripSeparator3
             // 
@@ -214,34 +200,12 @@
             saveToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.S;
             saveToolStripMenuItem1.Size = new Size(146, 22);
             saveToolStripMenuItem1.Text = "&Save";
-            // 
-            // saveAsToolStripMenuItem1
-            // 
-            saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
-            saveAsToolStripMenuItem1.Size = new Size(146, 22);
-            saveAsToolStripMenuItem1.Text = "Save &As";
+            saveToolStripMenuItem1.Click += saveToolStripMenuItem1_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
             toolStripSeparator4.Size = new Size(143, 6);
-            // 
-            // printToolStripMenuItem1
-            // 
-            printToolStripMenuItem1.Image = (Image)resources.GetObject("printToolStripMenuItem1.Image");
-            printToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
-            printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            printToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.P;
-            printToolStripMenuItem1.Size = new Size(146, 22);
-            printToolStripMenuItem1.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem1
-            // 
-            printPreviewToolStripMenuItem1.Image = (Image)resources.GetObject("printPreviewToolStripMenuItem1.Image");
-            printPreviewToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
-            printPreviewToolStripMenuItem1.Name = "printPreviewToolStripMenuItem1";
-            printPreviewToolStripMenuItem1.Size = new Size(146, 22);
-            printPreviewToolStripMenuItem1.Text = "Print Pre&view";
             // 
             // toolStripSeparator5
             // 
@@ -254,89 +218,6 @@
             exitToolStripMenuItem1.Size = new Size(146, 22);
             exitToolStripMenuItem1.Text = "E&xit";
             exitToolStripMenuItem1.Click += exitToolStripMenuItem1_Click;
-            // 
-            // editToolStripMenuItem
-            // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { undoToolStripMenuItem, redoToolStripMenuItem, toolStripSeparator6, cutToolStripMenuItem, copyToolStripMenuItem, pasteToolStripMenuItem, toolStripSeparator7, selectAllToolStripMenuItem });
-            editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(39, 20);
-            editToolStripMenuItem.Text = "&Edit";
-            // 
-            // undoToolStripMenuItem
-            // 
-            undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
-            undoToolStripMenuItem.Size = new Size(144, 22);
-            undoToolStripMenuItem.Text = "&Undo";
-            // 
-            // redoToolStripMenuItem
-            // 
-            redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            redoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
-            redoToolStripMenuItem.Size = new Size(144, 22);
-            redoToolStripMenuItem.Text = "&Redo";
-            // 
-            // toolStripSeparator6
-            // 
-            toolStripSeparator6.Name = "toolStripSeparator6";
-            toolStripSeparator6.Size = new Size(141, 6);
-            // 
-            // cutToolStripMenuItem
-            // 
-            cutToolStripMenuItem.Image = (Image)resources.GetObject("cutToolStripMenuItem.Image");
-            cutToolStripMenuItem.ImageTransparentColor = Color.Magenta;
-            cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            cutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
-            cutToolStripMenuItem.Size = new Size(144, 22);
-            cutToolStripMenuItem.Text = "Cu&t";
-            // 
-            // copyToolStripMenuItem
-            // 
-            copyToolStripMenuItem.Image = (Image)resources.GetObject("copyToolStripMenuItem.Image");
-            copyToolStripMenuItem.ImageTransparentColor = Color.Magenta;
-            copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            copyToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            copyToolStripMenuItem.Size = new Size(144, 22);
-            copyToolStripMenuItem.Text = "&Copy";
-            // 
-            // pasteToolStripMenuItem
-            // 
-            pasteToolStripMenuItem.Image = (Image)resources.GetObject("pasteToolStripMenuItem.Image");
-            pasteToolStripMenuItem.ImageTransparentColor = Color.Magenta;
-            pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            pasteToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
-            pasteToolStripMenuItem.Size = new Size(144, 22);
-            pasteToolStripMenuItem.Text = "&Paste";
-            // 
-            // toolStripSeparator7
-            // 
-            toolStripSeparator7.Name = "toolStripSeparator7";
-            toolStripSeparator7.Size = new Size(141, 6);
-            // 
-            // selectAllToolStripMenuItem
-            // 
-            selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            selectAllToolStripMenuItem.Size = new Size(144, 22);
-            selectAllToolStripMenuItem.Text = "Select &All";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { customizeToolStripMenuItem, optionsToolStripMenuItem });
-            toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            toolsToolStripMenuItem.Size = new Size(46, 20);
-            toolsToolStripMenuItem.Text = "&Tools";
-            // 
-            // customizeToolStripMenuItem
-            // 
-            customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            customizeToolStripMenuItem.Size = new Size(130, 22);
-            customizeToolStripMenuItem.Text = "&Customize";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(130, 22);
-            optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem
             // 
@@ -378,8 +259,16 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(minuteNumericUpDown);
+            panel1.Controls.Add(hoursNumericUpDown);
             panel1.Controls.Add(searchButton);
-            panel1.Controls.Add(coordinateBox);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(timeBox1);
+            panel1.Controls.Add(timeBox);
+            panel1.Controls.Add(coordinateBox3);
+            panel1.Controls.Add(timeToView);
+            panel1.Controls.Add(coordinateBox2);
+            panel1.Controls.Add(coordinateBox1);
             panel1.Controls.Add(coordinateText);
             panel1.Controls.Add(distanceBox);
             panel1.Controls.Add(distanceText);
@@ -394,22 +283,84 @@
             panel1.Size = new Size(606, 275);
             panel1.TabIndex = 19;
             // 
+            // minuteNumericUpDown
+            // 
+            minuteNumericUpDown.Location = new Point(385, 199);
+            minuteNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
+            minuteNumericUpDown.Name = "minuteNumericUpDown";
+            minuteNumericUpDown.Size = new Size(104, 23);
+            minuteNumericUpDown.TabIndex = 11;
+            // 
+            // hoursNumericUpDown
+            // 
+            hoursNumericUpDown.Location = new Point(230, 199);
+            hoursNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
+            hoursNumericUpDown.Name = "hoursNumericUpDown";
+            hoursNumericUpDown.Size = new Size(104, 23);
+            hoursNumericUpDown.TabIndex = 10;
+            // 
             // searchButton
             // 
             searchButton.Location = new Point(526, 247);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(75, 23);
-            searchButton.TabIndex = 20;
+            searchButton.TabIndex = 12;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
-            searchButton.Click += searchButton_Click;
+            searchButton.Click += searchButton_Click_2;
             // 
-            // coordinateBox
+            // label1
             // 
-            coordinateBox.Location = new Point(161, 141);
-            coordinateBox.Name = "coordinateBox";
-            coordinateBox.Size = new Size(400, 23);
-            coordinateBox.TabIndex = 9;
+            label1.AutoSize = true;
+            label1.Location = new Point(357, 173);
+            label1.Name = "label1";
+            label1.Size = new Size(10, 15);
+            label1.TabIndex = 21;
+            label1.Text = ":";
+            // 
+            // timeBox1
+            // 
+            timeBox1.Location = new Point(385, 170);
+            timeBox1.Name = "timeBox1";
+            timeBox1.Size = new Size(104, 23);
+            timeBox1.TabIndex = 9;
+            // 
+            // timeBox
+            // 
+            timeBox.Location = new Point(230, 170);
+            timeBox.Name = "timeBox";
+            timeBox.Size = new Size(104, 23);
+            timeBox.TabIndex = 8;
+            // 
+            // coordinateBox3
+            // 
+            coordinateBox3.Location = new Point(457, 141);
+            coordinateBox3.Name = "coordinateBox3";
+            coordinateBox3.Size = new Size(104, 23);
+            coordinateBox3.TabIndex = 7;
+            // 
+            // timeToView
+            // 
+            timeToView.AutoSize = true;
+            timeToView.Location = new Point(23, 178);
+            timeToView.Name = "timeToView";
+            timeToView.Size = new Size(33, 15);
+            timeToView.TabIndex = 22;
+            timeToView.Text = "Time";
+            // 
+            // coordinateBox2
+            // 
+            coordinateBox2.Location = new Point(309, 141);
+            coordinateBox2.Name = "coordinateBox2";
+            coordinateBox2.Size = new Size(104, 23);
+            coordinateBox2.TabIndex = 6;
+            // 
+            // coordinateBox1
+            // 
+            coordinateBox1.Location = new Point(161, 141);
+            coordinateBox1.Name = "coordinateBox1";
+            coordinateBox1.Size = new Size(104, 23);
+            coordinateBox1.TabIndex = 5;
             // 
             // coordinateText
             // 
@@ -425,7 +376,7 @@
             distanceBox.Location = new Point(161, 112);
             distanceBox.Name = "distanceBox";
             distanceBox.Size = new Size(400, 23);
-            distanceBox.TabIndex = 7;
+            distanceBox.TabIndex = 4;
             // 
             // distanceText
             // 
@@ -441,12 +392,12 @@
             stellarBox.Location = new Point(161, 83);
             stellarBox.Name = "stellarBox";
             stellarBox.Size = new Size(400, 23);
-            stellarBox.TabIndex = 5;
+            stellarBox.TabIndex = 3;
             // 
             // stellarText
             // 
             stellarText.AutoSize = true;
-            stellarText.Location = new Point(23, 91);
+            stellarText.Location = new Point(22, 91);
             stellarText.Name = "stellarText";
             stellarText.Size = new Size(100, 15);
             stellarText.TabIndex = 4;
@@ -457,7 +408,7 @@
             constellationBox.Location = new Point(161, 54);
             constellationBox.Name = "constellationBox";
             constellationBox.Size = new Size(400, 23);
-            constellationBox.TabIndex = 3;
+            constellationBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -496,7 +447,6 @@
             resultList.Size = new Size(606, 289);
             resultList.TabIndex = 20;
             resultList.ValueMember = "StellarMagnitude";
-            resultList.SelectedIndexChanged += resultList_SelectedIndexChanged;
             resultList.DoubleClick += resultBox_DoubleClick;
             // 
             // starBindingSource
@@ -514,11 +464,12 @@
             MinimumSize = new Size(677, 708);
             Name = "MainForm";
             Text = "MainForm";
-            Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)minuteNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)hoursNumericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)starBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -538,28 +489,12 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem newToolStripMenuItem1;
         private ToolStripMenuItem openToolStripMenuItem1;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem saveToolStripMenuItem1;
-        private ToolStripMenuItem saveAsToolStripMenuItem1;
         private ToolStripSeparator toolStripSeparator4;
-        private ToolStripMenuItem printToolStripMenuItem1;
-        private ToolStripMenuItem printPreviewToolStripMenuItem1;
         private ToolStripSeparator toolStripSeparator5;
         private ToolStripMenuItem exitToolStripMenuItem1;
-        private ToolStripMenuItem editToolStripMenuItem;
-        private ToolStripMenuItem undoToolStripMenuItem;
-        private ToolStripMenuItem redoToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator6;
-        private ToolStripMenuItem cutToolStripMenuItem;
-        private ToolStripMenuItem copyToolStripMenuItem;
-        private ToolStripMenuItem pasteToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator7;
-        private ToolStripMenuItem selectAllToolStripMenuItem;
-        private ToolStripMenuItem toolsToolStripMenuItem;
-        private ToolStripMenuItem customizeToolStripMenuItem;
-        private ToolStripMenuItem optionsToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem contentsToolStripMenuItem;
         private ToolStripMenuItem indexToolStripMenuItem;
@@ -575,10 +510,19 @@
         private Label label2;
         private TextBox nameBox;
         private Label nameText;
-        private TextBox coordinateBox;
+        private TextBox coordinateBox1;
         private Label coordinateText;
-        private Button searchButton;
         private ListBox resultList;
         private BindingSource starBindingSource;
+        private TextBox coordinateBox3;
+        private TextBox coordinateBox2;
+        private Button searchButton_Click;
+        private TextBox timeBox1;
+        private TextBox timeBox;
+        private Label timeToView;
+        private Label label1;
+        private Button searchButton;
+        private NumericUpDown minuteNumericUpDown;
+        private NumericUpDown hoursNumericUpDown;
     }
 }

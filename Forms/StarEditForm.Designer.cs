@@ -38,8 +38,8 @@
             distanceTextEdit = new Label();
             coordinateBoxEdit = new TextBox();
             label5 = new Label();
-            okButtonEdit = new Button();
             cancelButtonEdit = new Button();
+            okButtonEdit = new Button();
             SuspendLayout();
             // 
             // nameTextEdit
@@ -53,11 +53,11 @@
             // 
             // nameBoxEdit
             // 
-            nameBoxEdit.Enabled = false;
             nameBoxEdit.Location = new Point(161, 33);
             nameBoxEdit.Name = "nameBoxEdit";
             nameBoxEdit.Size = new Size(418, 23);
             nameBoxEdit.TabIndex = 1;
+            nameBoxEdit.Validating += nameBoxEdit_Validating;
             // 
             // constellationBoxEdit
             // 
@@ -93,10 +93,12 @@
             // 
             // distanceBoxEdit
             // 
+            distanceBoxEdit.AcceptsTab = true;
             distanceBoxEdit.Location = new Point(161, 120);
             distanceBoxEdit.Name = "distanceBoxEdit";
             distanceBoxEdit.Size = new Size(418, 23);
             distanceBoxEdit.TabIndex = 7;
+            distanceBoxEdit.Validating += distanceBoxEdit_Validating;
             // 
             // distanceTextEdit
             // 
@@ -123,6 +125,16 @@
             label5.TabIndex = 8;
             label5.Text = "Coordinate";
             // 
+            // cancelButtonEdit
+            // 
+            cancelButtonEdit.DialogResult = DialogResult.Cancel;
+            cancelButtonEdit.Location = new Point(504, 188);
+            cancelButtonEdit.Name = "cancelButtonEdit";
+            cancelButtonEdit.Size = new Size(75, 23);
+            cancelButtonEdit.TabIndex = 13;
+            cancelButtonEdit.Text = "Cancel";
+            cancelButtonEdit.UseVisualStyleBackColor = true;
+            // 
             // okButtonEdit
             // 
             okButtonEdit.DialogResult = DialogResult.OK;
@@ -133,16 +145,6 @@
             okButtonEdit.Text = "Ok";
             okButtonEdit.UseVisualStyleBackColor = true;
             okButtonEdit.Click += okButtonEdit_Click;
-            // 
-            // cancelButtonEdit
-            // 
-            cancelButtonEdit.DialogResult = DialogResult.Cancel;
-            cancelButtonEdit.Location = new Point(504, 188);
-            cancelButtonEdit.Name = "cancelButtonEdit";
-            cancelButtonEdit.Size = new Size(75, 23);
-            cancelButtonEdit.TabIndex = 13;
-            cancelButtonEdit.Text = "Cancel";
-            cancelButtonEdit.UseVisualStyleBackColor = true;
             // 
             // StarEditForm
             // 
@@ -181,7 +183,7 @@
         private Label distanceTextEdit;
         private TextBox coordinateBoxEdit;
         private Label label5;
-        private Button okButtonEdit;
         private Button cancelButtonEdit;
+        private Button okButtonEdit;
     }
 }
