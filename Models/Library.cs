@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using static System.Reflection.Metadata.BlobBuilder;
 
 namespace StarBook.Models
@@ -8,52 +9,57 @@ namespace StarBook.Models
         public Library() 
         {
             Stars = new List<Star> ();
-            //FillWithTestData(10);
+            FillWithTestData(1000);
         }
         public List<Star> Stars { get; set; }
-        //void FillWithTestData(int n)
-        //{
-        //    for (int i = 0; i < n; i++)
-        //    {
-        //        Stars.Add(new Star
-        //        {
-        //            Name = $"Star{i}",
-        //            Constellation = $"Constellation{i/3}",
-        //            StellarMagnitude = i,
-        //            Distance = i,
-        //            CoordinateX = i,
-        //            CoordinateY = i,
-        //            StartHour = 20+i%4,
-        //            StartMinute = i%60,
-        //            EndHour = i%5,
-        //            EndMinute = i % 60
-        //        });
-        //    }
-        //}
+        void FillWithTestData(int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Stars.Add(new Star
+                {
+                    Name = $"Star{i}",
+                    Constellation = $"Constellation{i / 3}",
+                    StellarMagnitude = i,
+                    Distance = i,
+                    CoordinateX = i,
+                    CoordinateY = i,
+                    StartHour = 20 + i % 4,
+                    StartMinute = i % 60,
+                    EndHour = i % 5,
+                    EndMinute = i % 60
+                });
+            }
+        }
 
         public List <Star> Search(string name, string constallation, string stellarMagnitude,
             string distance, string coordinateX, string coordinateY,
             int hour, int minute)
         {
             var result = new List<Star>();
-            foreach (var s in Stars) 
+            foreach (var s in Stars)
             {
                 var time = new TimeOnly(hour, minute);
                 var startTime = new TimeOnly(s.StartHour, s.StartMinute);
                 var endTime = new TimeOnly(s.EndHour, s.EndMinute);
 
-                if (s.Name.Contains(name) ||
-                    s.Constellation.Contains(constallation) ||
-                    s.StellarMagnitude.ToString().Contains(stellarMagnitude) &&
-                    s.Distance.ToString().Contains(distance) &&
-                    s.CoordinateX.ToString().Contains(coordinateX) 
+                if (s.Name.Contains(name)
+                    && (s.Constellation == null || s.Constellation.Contains(constallation))
+                    && s.StellarMagnitude.ToString().Contains(stellarMagnitude)
+                    && s.Distance.ToString().Contains(distance)
+                    && s.CoordinateX.ToString().Contains(coordinateX)
                     && s.CoordinateY.ToString().Contains(coordinateY)
-                    || (startTime < endTime && time >= startTime 
-                    && time <= endTime || startTime>= endTime
+                    && (startTime < endTime && time >= startTime
+                    && time <= endTime || startTime >= endTime
                     && time <= endTime))
                 {
                     result.Add(s);
+                    for (var i = 0; i <= Stars.Count; i++)
+                    {
+                        s.StellarMagnitude.Sort();
+                    }
                 }
+                
             }
             return result;
         }

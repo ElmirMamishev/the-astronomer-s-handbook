@@ -173,14 +173,14 @@
             // createNewToolStripMenuItem
             // 
             createNewToolStripMenuItem.Name = "createNewToolStripMenuItem";
-            createNewToolStripMenuItem.Size = new Size(180, 22);
+            createNewToolStripMenuItem.Size = new Size(172, 22);
             createNewToolStripMenuItem.Text = "Створити";
             createNewToolStripMenuItem.Click += createNewToolStripMenuItem_Click;
             // 
             // toolStripSeparator5
             // 
             toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(143, 6);
+            toolStripSeparator5.Size = new Size(169, 6);
             // 
             // openToolStripMenuItem1
             // 
@@ -188,14 +188,14 @@
             openToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             openToolStripMenuItem1.Name = "openToolStripMenuItem1";
             openToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.O;
-            openToolStripMenuItem1.Size = new Size(180, 22);
+            openToolStripMenuItem1.Size = new Size(172, 22);
             openToolStripMenuItem1.Text = "&Відкирити";
             openToolStripMenuItem1.Click += openToolStripMenuItem1_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(143, 6);
+            toolStripSeparator3.Size = new Size(169, 6);
             // 
             // saveToolStripMenuItem1
             // 
@@ -203,19 +203,19 @@
             saveToolStripMenuItem1.ImageTransparentColor = Color.Magenta;
             saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
             saveToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.S;
-            saveToolStripMenuItem1.Size = new Size(180, 22);
+            saveToolStripMenuItem1.Size = new Size(172, 22);
             saveToolStripMenuItem1.Text = "&Зберегти";
             saveToolStripMenuItem1.Click += saveToolStripMenuItem1_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(143, 6);
+            toolStripSeparator4.Size = new Size(169, 6);
             // 
             // exitToolStripMenuItem1
             // 
             exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            exitToolStripMenuItem1.Size = new Size(180, 22);
+            exitToolStripMenuItem1.Size = new Size(172, 22);
             exitToolStripMenuItem1.Text = "В&ийти";
             exitToolStripMenuItem1.Click += exitToolStripMenuItem1_Click;
             // 
@@ -407,6 +407,7 @@
             // 
             // MainForm
             // 
+            AcceptButton = searchButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(647, 585);
@@ -460,7 +461,6 @@
         private ListBox resultList;
         private BindingSource starBindingSource;
         private TextBox coordinateBox2;
-        private Button searchButton_Click;
         private Label timeToView;
         private Label label1;
         private Button searchButton;

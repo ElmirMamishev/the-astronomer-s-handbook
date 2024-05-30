@@ -15,7 +15,7 @@ namespace StarBook.Forms
     {
         readonly Star CurrentStar;
 
-        public EditStarForm(Star star = null)
+        public EditStarForm(Star? star = null)
         {
             InitializeComponent();
             this.CurrentStar = star ?? new Star();
@@ -26,11 +26,13 @@ namespace StarBook.Forms
             distanceEditBox.DataBindings.Add("Text", CurrentStar, "Distance");
             coordinateEditBox1.DataBindings.Add("Text", CurrentStar, "CoordinateX");
             coordinateEditBox2.DataBindings.Add("Text", CurrentStar, "CoordinateY");
-            hoursEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartHour");
-            minuteEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartMinute");
+            hoursStartEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartHour");
+            minuteStartEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartMinute");
+            hoursEndEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "EndHour");
+            minuteEndtEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "EndMinute"); ;
         }
 
-        private void nameBoxEdit_Validating(object sender, CancelEventArgs e)
+        private void nameEditBox_Validating(object sender, CancelEventArgs e)
         {
             if (nameEditBox.Text.Trim().Length == 0)
             {
@@ -38,20 +40,24 @@ namespace StarBook.Forms
                 e.Cancel = true;
             }
         }
-
         private void distanceBoxEdit_Validating(object sender, CancelEventArgs e)
         {
-            bool isNumber = int.TryParse(distanceEditBox.Text, out int distance);
-            if (!isNumber || distance < 0)
+            bool isNumber = double.TryParse(distanceEditBox.Text, out double distance);
+            if (distance < 0)
             {
                 MessageBox.Show("Відстань має бути числом більше 0.");
+                e.Cancel = true;
+            }
+            if (!isNumber)
+            {
+                MessageBox.Show("Відстань має бути числом");
                 e.Cancel = true;
             }
         }
 
         private void stellarBoxEdit_Validating(object sender, CancelEventArgs e)
         {
-            bool isNumber = int.TryParse(stellarEditBox.Text, out int magnitude);
+            bool isNumber = float.TryParse(stellarEditBox.Text, out float magnitude);
             if (!isNumber)
             {
                 MessageBox.Show("Зоряна величина має бути числом.");
@@ -68,5 +74,6 @@ namespace StarBook.Forms
             }
             return null;
         }
+
     }
 }

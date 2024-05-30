@@ -24,7 +24,7 @@ namespace StarBook
         {
             if (resultList.SelectedItems.Count > 0)
             {
-                Star star = resultList?.SelectedItem as Star;
+                Star? star = resultList?.SelectedItem as Star;
                 var starEditForm = new EditStarForm(star);
                 starEditForm.Open();
                 Search();

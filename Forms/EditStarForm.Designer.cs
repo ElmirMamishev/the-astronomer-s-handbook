@@ -41,12 +41,18 @@
             okButtonEdit = new Button();
             coordinateEditBox1 = new TextBox();
             coordinateEditBox2 = new TextBox();
-            minuteEditNumericUpDown = new NumericUpDown();
-            hoursEditNumericUpDown = new NumericUpDown();
+            minuteStartEditNumericUpDown = new NumericUpDown();
+            hoursStartEditNumericUpDown = new NumericUpDown();
             label1 = new Label();
-            timeToViewEditText = new Label();
-            ((System.ComponentModel.ISupportInitialize)minuteEditNumericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)hoursEditNumericUpDown).BeginInit();
+            timeToStartViewEditText = new Label();
+            TimeToStopViewEditText = new Label();
+            hoursEndEditNumericUpDown = new NumericUpDown();
+            minuteEndtEditNumericUpDown = new NumericUpDown();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)minuteStartEditNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)hoursStartEditNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)hoursEndEditNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)minuteEndtEditNumericUpDown).BeginInit();
             SuspendLayout();
             // 
             // nameTextEdit
@@ -64,7 +70,7 @@
             nameEditBox.Name = "nameEditBox";
             nameEditBox.Size = new Size(418, 23);
             nameEditBox.TabIndex = 1;
-            nameEditBox.Validating += nameBoxEdit_Validating;
+            nameEditBox.Validating += nameEditBox_Validating;
             // 
             // constellationEditBox
             // 
@@ -128,8 +134,9 @@
             // 
             // cancelButtonEdit
             // 
-            cancelButtonEdit.DialogResult = DialogResult.Cancel;
-            cancelButtonEdit.Location = new Point(572, 230);
+            cancelButtonEdit.Anchor = AnchorStyles.Top;
+            cancelButtonEdit.DialogResult = DialogResult.Retry;
+            cancelButtonEdit.Location = new Point(504, 236);
             cancelButtonEdit.Name = "cancelButtonEdit";
             cancelButtonEdit.Size = new Size(75, 23);
             cancelButtonEdit.TabIndex = 13;
@@ -139,7 +146,7 @@
             // okButtonEdit
             // 
             okButtonEdit.DialogResult = DialogResult.OK;
-            okButtonEdit.Location = new Point(491, 230);
+            okButtonEdit.Location = new Point(415, 236);
             okButtonEdit.Name = "okButtonEdit";
             okButtonEdit.Size = new Size(75, 23);
             okButtonEdit.TabIndex = 12;
@@ -160,21 +167,21 @@
             coordinateEditBox2.Size = new Size(193, 23);
             coordinateEditBox2.TabIndex = 15;
             // 
-            // minuteEditNumericUpDown
+            // minuteStartEditNumericUpDown
             // 
-            minuteEditNumericUpDown.Location = new Point(386, 178);
-            minuteEditNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
-            minuteEditNumericUpDown.Name = "minuteEditNumericUpDown";
-            minuteEditNumericUpDown.Size = new Size(104, 23);
-            minuteEditNumericUpDown.TabIndex = 24;
+            minuteStartEditNumericUpDown.Location = new Point(386, 178);
+            minuteStartEditNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
+            minuteStartEditNumericUpDown.Name = "minuteStartEditNumericUpDown";
+            minuteStartEditNumericUpDown.Size = new Size(104, 23);
+            minuteStartEditNumericUpDown.TabIndex = 24;
             // 
-            // hoursEditNumericUpDown
+            // hoursStartEditNumericUpDown
             // 
-            hoursEditNumericUpDown.Location = new Point(250, 178);
-            hoursEditNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
-            hoursEditNumericUpDown.Name = "hoursEditNumericUpDown";
-            hoursEditNumericUpDown.Size = new Size(104, 23);
-            hoursEditNumericUpDown.TabIndex = 23;
+            hoursStartEditNumericUpDown.Location = new Point(250, 178);
+            hoursStartEditNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
+            hoursStartEditNumericUpDown.Name = "hoursStartEditNumericUpDown";
+            hoursStartEditNumericUpDown.Size = new Size(104, 23);
+            hoursStartEditNumericUpDown.TabIndex = 23;
             // 
             // label1
             // 
@@ -185,24 +192,64 @@
             label1.TabIndex = 25;
             label1.Text = ":";
             // 
-            // timeToViewEditText
+            // timeToStartViewEditText
             // 
-            timeToViewEditText.AutoSize = true;
-            timeToViewEditText.Location = new Point(55, 186);
-            timeToViewEditText.Name = "timeToViewEditText";
-            timeToViewEditText.Size = new Size(27, 15);
-            timeToViewEditText.TabIndex = 26;
-            timeToViewEditText.Text = "Час";
+            timeToStartViewEditText.AutoSize = true;
+            timeToStartViewEditText.Location = new Point(55, 186);
+            timeToStartViewEditText.Name = "timeToStartViewEditText";
+            timeToStartViewEditText.Size = new Size(145, 15);
+            timeToStartViewEditText.TabIndex = 26;
+            timeToStartViewEditText.Text = "Початок спостереження ";
+            // 
+            // TimeToStopViewEditText
+            // 
+            TimeToStopViewEditText.AutoSize = true;
+            TimeToStopViewEditText.Location = new Point(55, 212);
+            TimeToStopViewEditText.Name = "TimeToStopViewEditText";
+            TimeToStopViewEditText.Size = new Size(131, 15);
+            TimeToStopViewEditText.TabIndex = 27;
+            TimeToStopViewEditText.Text = "Кінець спостереження";
+            // 
+            // hoursEndEditNumericUpDown
+            // 
+            hoursEndEditNumericUpDown.Location = new Point(250, 207);
+            hoursEndEditNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
+            hoursEndEditNumericUpDown.Name = "hoursEndEditNumericUpDown";
+            hoursEndEditNumericUpDown.Size = new Size(104, 23);
+            hoursEndEditNumericUpDown.TabIndex = 28;
+            // 
+            // minuteEndtEditNumericUpDown
+            // 
+            minuteEndtEditNumericUpDown.Location = new Point(386, 207);
+            minuteEndtEditNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
+            minuteEndtEditNumericUpDown.Name = "minuteEndtEditNumericUpDown";
+            minuteEndtEditNumericUpDown.Size = new Size(104, 23);
+            minuteEndtEditNumericUpDown.TabIndex = 29;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(365, 209);
+            label2.Name = "label2";
+            label2.Size = new Size(10, 15);
+            label2.TabIndex = 30;
+            label2.Text = ":";
             // 
             // EditStarForm
             // 
+            AcceptButton = okButtonEdit;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = cancelButtonEdit;
             ClientSize = new Size(655, 265);
-            Controls.Add(minuteEditNumericUpDown);
-            Controls.Add(hoursEditNumericUpDown);
+            Controls.Add(label2);
+            Controls.Add(minuteEndtEditNumericUpDown);
+            Controls.Add(hoursEndEditNumericUpDown);
+            Controls.Add(TimeToStopViewEditText);
+            Controls.Add(minuteStartEditNumericUpDown);
+            Controls.Add(hoursStartEditNumericUpDown);
             Controls.Add(label1);
-            Controls.Add(timeToViewEditText);
+            Controls.Add(timeToStartViewEditText);
             Controls.Add(coordinateEditBox2);
             Controls.Add(coordinateEditBox1);
             Controls.Add(cancelButtonEdit);
@@ -220,8 +267,10 @@
             MinimumSize = new Size(671, 304);
             Name = "EditStarForm";
             Text = "EditForm";
-            ((System.ComponentModel.ISupportInitialize)minuteEditNumericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)hoursEditNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)minuteStartEditNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)hoursStartEditNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)hoursEndEditNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)minuteEndtEditNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,9 +290,13 @@
         private Button okButtonEdit;
         private TextBox coordinateEditBox1;
         private TextBox coordinateEditBox2;
-        private NumericUpDown minuteEditNumericUpDown;
-        private NumericUpDown hoursEditNumericUpDown;
+        private NumericUpDown minuteStartEditNumericUpDown;
+        private NumericUpDown hoursStartEditNumericUpDown;
         private Label label1;
-        private Label timeToViewEditText;
+        private Label timeToStartViewEditText;
+        private Label TimeToStopViewEditText;
+        private NumericUpDown hoursEndEditNumericUpDown;
+        private NumericUpDown minuteEndtEditNumericUpDown;
+        private Label label2;
     }
 }
