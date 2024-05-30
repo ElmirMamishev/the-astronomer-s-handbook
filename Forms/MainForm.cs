@@ -1,4 +1,4 @@
-using StarBook.Forms;
+﻿using StarBook.Forms;
 using StarBook.Manager;
 using StarBook.Models;
 
@@ -27,7 +27,7 @@ namespace StarBook
                 Star? star = resultList?.SelectedItem as Star;
                 var starEditForm = new EditStarForm(star);
                 starEditForm.Open();
-                Search();
+                //Search();
             };
         }
         const string PATH_TO_DATA = ".\\library.txt";
@@ -70,6 +70,16 @@ namespace StarBook
             var newStar = starEditForm.Open();
             library.AddStar(newStar);
             Search();
+        }
+
+        private void stellarBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            bool isNumber = float.TryParse(stellarBox.Text, out float magnitude);
+            if (!isNumber)
+            {
+                MessageBox.Show("Зоряна величина має бути числом.");
+                e.Cancel = true;
+            }
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 using System.Text.Json;
 using static System.Reflection.Metadata.BlobBuilder;
 
@@ -22,8 +23,8 @@ namespace StarBook.Models
                     Constellation = $"Constellation{i / 3}",
                     StellarMagnitude = i,
                     Distance = i,
-                    CoordinateX = i,
-                    CoordinateY = i,
+                    CoordinateX = i / 3,
+                    CoordinateY = i % 5,
                     StartHour = 20 + i % 4,
                     StartMinute = i % 60,
                     EndHour = i % 5,
@@ -43,7 +44,7 @@ namespace StarBook.Models
                 var startTime = new TimeOnly(s.StartHour, s.StartMinute);
                 var endTime = new TimeOnly(s.EndHour, s.EndMinute);
 
-                if (s.Name.Contains(name)
+                if ((s.Name == null|| s.Name.Contains(name))
                     && (s.Constellation == null || s.Constellation.Contains(constallation))
                     && s.StellarMagnitude.ToString().Contains(stellarMagnitude)
                     && s.Distance.ToString().Contains(distance)
@@ -53,13 +54,11 @@ namespace StarBook.Models
                     && time <= endTime || startTime >= endTime
                     && time <= endTime))
                 {
+
                     result.Add(s);
-                    for (var i = 0; i <= Stars.Count; i++)
-                    {
-                        s.StellarMagnitude.Sort();
-                    }
+
                 }
-                
+
             }
             return result;
         }

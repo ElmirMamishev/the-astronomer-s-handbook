@@ -4,10 +4,10 @@
     {
         public string? Name { get; set; }
         public string? Constellation { get; set; }
-        public float StellarMagnitude { get; set; }
+        public double StellarMagnitude { get; set; }
         public double Distance { get; set; }
-        public int CoordinateX { get; set; }
-        public int CoordinateY { get; set; }
+        public double CoordinateX { get; set; }
+        public double CoordinateY { get; set; }
         public int StartMinute { get; set; }
         public int StartHour { get; set; }
         public int EndMinute { get; set; }

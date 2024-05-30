@@ -77,7 +77,7 @@
             constellationEditBox.Location = new Point(161, 62);
             constellationEditBox.Name = "constellationEditBox";
             constellationEditBox.Size = new Size(418, 23);
-            constellationEditBox.TabIndex = 3;
+            constellationEditBox.TabIndex = 2;
             // 
             // constellationEditText
             // 
@@ -93,8 +93,8 @@
             stellarEditBox.Location = new Point(161, 91);
             stellarEditBox.Name = "stellarEditBox";
             stellarEditBox.Size = new Size(418, 23);
-            stellarEditBox.TabIndex = 5;
-            stellarEditBox.Validating += stellarBoxEdit_Validating;
+            stellarEditBox.TabIndex = 3;
+            stellarEditBox.Validating += stellarEditBox_Validating;
             // 
             // stellarEditText
             // 
@@ -111,8 +111,8 @@
             distanceEditBox.Location = new Point(161, 120);
             distanceEditBox.Name = "distanceEditBox";
             distanceEditBox.Size = new Size(418, 23);
-            distanceEditBox.TabIndex = 7;
-            distanceEditBox.Validating += distanceBoxEdit_Validating;
+            distanceEditBox.TabIndex = 4;
+            distanceEditBox.Validating += distanceEditBox_Validating;
             // 
             // distanceEditText
             // 
@@ -135,11 +135,11 @@
             // cancelButtonEdit
             // 
             cancelButtonEdit.Anchor = AnchorStyles.Top;
-            cancelButtonEdit.DialogResult = DialogResult.Retry;
+            cancelButtonEdit.DialogResult = DialogResult.Cancel;
             cancelButtonEdit.Location = new Point(504, 236);
             cancelButtonEdit.Name = "cancelButtonEdit";
             cancelButtonEdit.Size = new Size(75, 23);
-            cancelButtonEdit.TabIndex = 13;
+            cancelButtonEdit.TabIndex = 12;
             cancelButtonEdit.Text = "Відмінити";
             cancelButtonEdit.UseVisualStyleBackColor = true;
             // 
@@ -149,7 +149,7 @@
             okButtonEdit.Location = new Point(415, 236);
             okButtonEdit.Name = "okButtonEdit";
             okButtonEdit.Size = new Size(75, 23);
-            okButtonEdit.TabIndex = 12;
+            okButtonEdit.TabIndex = 11;
             okButtonEdit.Text = "Ок";
             okButtonEdit.UseVisualStyleBackColor = true;
             // 
@@ -158,14 +158,16 @@
             coordinateEditBox1.Location = new Point(161, 149);
             coordinateEditBox1.Name = "coordinateEditBox1";
             coordinateEditBox1.Size = new Size(193, 23);
-            coordinateEditBox1.TabIndex = 14;
+            coordinateEditBox1.TabIndex = 5;
+            coordinateEditBox1.Validating += coordinateEditBox1_Validating;
             // 
             // coordinateEditBox2
             // 
             coordinateEditBox2.Location = new Point(386, 149);
             coordinateEditBox2.Name = "coordinateEditBox2";
             coordinateEditBox2.Size = new Size(193, 23);
-            coordinateEditBox2.TabIndex = 15;
+            coordinateEditBox2.TabIndex = 6;
+            coordinateEditBox2.Validating += coordinateEditBox2_Validating;
             // 
             // minuteStartEditNumericUpDown
             // 
@@ -173,7 +175,7 @@
             minuteStartEditNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteStartEditNumericUpDown.Name = "minuteStartEditNumericUpDown";
             minuteStartEditNumericUpDown.Size = new Size(104, 23);
-            minuteStartEditNumericUpDown.TabIndex = 24;
+            minuteStartEditNumericUpDown.TabIndex = 8;
             // 
             // hoursStartEditNumericUpDown
             // 
@@ -181,7 +183,7 @@
             hoursStartEditNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursStartEditNumericUpDown.Name = "hoursStartEditNumericUpDown";
             hoursStartEditNumericUpDown.Size = new Size(104, 23);
-            hoursStartEditNumericUpDown.TabIndex = 23;
+            hoursStartEditNumericUpDown.TabIndex = 7;
             // 
             // label1
             // 
@@ -216,7 +218,7 @@
             hoursEndEditNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursEndEditNumericUpDown.Name = "hoursEndEditNumericUpDown";
             hoursEndEditNumericUpDown.Size = new Size(104, 23);
-            hoursEndEditNumericUpDown.TabIndex = 28;
+            hoursEndEditNumericUpDown.TabIndex = 9;
             // 
             // minuteEndtEditNumericUpDown
             // 
@@ -224,7 +226,7 @@
             minuteEndtEditNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteEndtEditNumericUpDown.Name = "minuteEndtEditNumericUpDown";
             minuteEndtEditNumericUpDown.Size = new Size(104, 23);
-            minuteEndtEditNumericUpDown.TabIndex = 29;
+            minuteEndtEditNumericUpDown.TabIndex = 10;
             // 
             // label2
             // 

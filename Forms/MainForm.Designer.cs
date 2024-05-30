@@ -243,7 +243,7 @@
             panel1.Location = new Point(28, 27);
             panel1.Name = "panel1";
             panel1.Size = new Size(586, 274);
-            panel1.TabIndex = 19;
+            panel1.TabIndex = 1;
             // 
             // addButton
             // 
@@ -251,7 +251,7 @@
             addButton.Location = new Point(425, 246);
             addButton.Name = "addButton";
             addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 21;
+            addButton.TabIndex = 10;
             addButton.Text = "Додати";
             addButton.UseVisualStyleBackColor = true;
             addButton.Click += addButton_Click;
@@ -262,7 +262,7 @@
             minuteNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteNumericUpDown.Name = "minuteNumericUpDown";
             minuteNumericUpDown.Size = new Size(104, 23);
-            minuteNumericUpDown.TabIndex = 11;
+            minuteNumericUpDown.TabIndex = 9;
             // 
             // hoursNumericUpDown
             // 
@@ -270,14 +270,14 @@
             hoursNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursNumericUpDown.Name = "hoursNumericUpDown";
             hoursNumericUpDown.Size = new Size(104, 23);
-            hoursNumericUpDown.TabIndex = 10;
+            hoursNumericUpDown.TabIndex = 8;
             // 
             // searchButton
             // 
             searchButton.Location = new Point(506, 246);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(75, 23);
-            searchButton.TabIndex = 12;
+            searchButton.TabIndex = 11;
             searchButton.Text = "Пошук";
             searchButton.UseVisualStyleBackColor = true;
             searchButton.Click += searchButton_Click_2;
@@ -305,14 +305,16 @@
             coordinateBox2.Location = new Point(368, 141);
             coordinateBox2.Name = "coordinateBox2";
             coordinateBox2.Size = new Size(193, 23);
-            coordinateBox2.TabIndex = 6;
+            coordinateBox2.TabIndex = 7;
+            coordinateBox2.Enter += searchButton_Click_2;
             // 
             // coordinateBox1
             // 
             coordinateBox1.Location = new Point(161, 141);
             coordinateBox1.Name = "coordinateBox1";
             coordinateBox1.Size = new Size(193, 23);
-            coordinateBox1.TabIndex = 5;
+            coordinateBox1.TabIndex = 6;
+            coordinateBox1.Enter += searchButton_Click_2;
             // 
             // coordinateText
             // 
@@ -328,7 +330,8 @@
             distanceBox.Location = new Point(161, 112);
             distanceBox.Name = "distanceBox";
             distanceBox.Size = new Size(400, 23);
-            distanceBox.TabIndex = 4;
+            distanceBox.TabIndex = 5;
+            distanceBox.Enter += searchButton_Click_2;
             // 
             // distanceText
             // 
@@ -344,7 +347,9 @@
             stellarBox.Location = new Point(161, 83);
             stellarBox.Name = "stellarBox";
             stellarBox.Size = new Size(400, 23);
-            stellarBox.TabIndex = 3;
+            stellarBox.TabIndex = 4;
+            stellarBox.Enter += searchButton_Click_2;
+            stellarBox.Validating += stellarBox_Validating;
             // 
             // stellarText
             // 
@@ -360,7 +365,8 @@
             constellationBox.Location = new Point(161, 54);
             constellationBox.Name = "constellationBox";
             constellationBox.Size = new Size(400, 23);
-            constellationBox.TabIndex = 2;
+            constellationBox.TabIndex = 3;
+            constellationBox.Enter += searchButton_Click_2;
             // 
             // label2
             // 
@@ -376,7 +382,8 @@
             nameBox.Location = new Point(161, 25);
             nameBox.Name = "nameBox";
             nameBox.Size = new Size(400, 23);
-            nameBox.TabIndex = 1;
+            nameBox.TabIndex = 2;
+            nameBox.Enter += searchButton_Click_2;
             // 
             // nameText
             // 
@@ -392,12 +399,12 @@
             resultList.Anchor = AnchorStyles.Top;
             resultList.DataSource = starBindingSource;
             resultList.DisplayMember = "Name";
-            resultList.FormattingEnabled = true;
             resultList.ItemHeight = 15;
             resultList.Location = new Point(28, 307);
             resultList.Name = "resultList";
             resultList.Size = new Size(586, 274);
-            resultList.TabIndex = 20;
+            resultList.Sorted = true;
+            resultList.TabIndex = 12;
             resultList.ValueMember = "StellarMagnitude";
             resultList.DoubleClick += resultBox_DoubleClick;
             // 

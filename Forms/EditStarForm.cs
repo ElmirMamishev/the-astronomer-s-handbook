@@ -40,7 +40,8 @@ namespace StarBook.Forms
                 e.Cancel = true;
             }
         }
-        private void distanceBoxEdit_Validating(object sender, CancelEventArgs e)
+
+        private void distanceEditBox_Validating(object sender, CancelEventArgs e)
         {
             bool isNumber = double.TryParse(distanceEditBox.Text, out double distance);
             if (distance < 0)
@@ -55,13 +56,36 @@ namespace StarBook.Forms
             }
         }
 
-        private void stellarBoxEdit_Validating(object sender, CancelEventArgs e)
+        private void stellarEditBox_Validating(object sender, CancelEventArgs e)
         {
             bool isNumber = float.TryParse(stellarEditBox.Text, out float magnitude);
             if (!isNumber)
             {
                 MessageBox.Show("Зоряна величина має бути числом.");
                 e.Cancel = true;
+            }
+        }
+        private void coordinateEditBox1_Validating(object sender, CancelEventArgs e)
+        {
+            bool isNumber = float.TryParse(coordinateEditBox1.Text, out float coordinateX);
+            {
+                if (!isNumber)
+                {
+                    MessageBox.Show("Координата 'X' має бути числом.");
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void coordinateEditBox2_Validating(object sender, CancelEventArgs e)
+        {
+            bool isNumber = float.TryParse(coordinateEditBox2.Text, out float coordinateY);
+            {
+                if (!isNumber)
+                {
+                    MessageBox.Show("Координата 'Y' має бути числом.");
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -74,6 +98,5 @@ namespace StarBook.Forms
             }
             return null;
         }
-
     }
 }
