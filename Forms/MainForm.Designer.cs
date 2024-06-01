@@ -51,6 +51,13 @@
             toolStripSeparator4 = new ToolStripSeparator();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
             panel1 = new Panel();
+            coordinateSText = new Label();
+            coordinateMText = new Label();
+            coordinateHText = new Label();
+            coordinateSBox = new TextBox();
+            coordinateMBox = new TextBox();
+            coordinateHBox = new TextBox();
+            label4 = new Label();
             coordinateXText = new Label();
             coordinateYText = new Label();
             label3 = new Label();
@@ -226,6 +233,13 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(coordinateSText);
+            panel1.Controls.Add(coordinateMText);
+            panel1.Controls.Add(coordinateHText);
+            panel1.Controls.Add(coordinateSBox);
+            panel1.Controls.Add(coordinateMBox);
+            panel1.Controls.Add(coordinateHBox);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(coordinateXText);
             panel1.Controls.Add(coordinateYText);
             panel1.Controls.Add(label3);
@@ -250,6 +264,66 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(619, 274);
             panel1.TabIndex = 1;
+            // 
+            // coordinateSText
+            // 
+            coordinateSText.AutoSize = true;
+            coordinateSText.Location = new Point(567, 167);
+            coordinateSText.Name = "coordinateSText";
+            coordinateSText.Size = new Size(12, 15);
+            coordinateSText.TabIndex = 42;
+            coordinateSText.Text = "″";
+            // 
+            // coordinateMText
+            // 
+            coordinateMText.AutoSize = true;
+            coordinateMText.Location = new Point(428, 167);
+            coordinateMText.Name = "coordinateMText";
+            coordinateMText.Size = new Size(10, 15);
+            coordinateMText.TabIndex = 41;
+            coordinateMText.Text = "′";
+            // 
+            // coordinateHText
+            // 
+            coordinateHText.AutoSize = true;
+            coordinateHText.Location = new Point(290, 167);
+            coordinateHText.Name = "coordinateHText";
+            coordinateHText.Size = new Size(12, 15);
+            coordinateHText.TabIndex = 40;
+            coordinateHText.Text = "°";
+            // 
+            // coordinateSBox
+            // 
+            coordinateSBox.Location = new Point(461, 170);
+            coordinateSBox.Name = "coordinateSBox";
+            coordinateSBox.Size = new Size(100, 23);
+            coordinateSBox.TabIndex = 10;
+            coordinateSBox.Validating += coordinateSBox_Validating;
+            // 
+            // coordinateMBox
+            // 
+            coordinateMBox.Location = new Point(322, 170);
+            coordinateMBox.Name = "coordinateMBox";
+            coordinateMBox.Size = new Size(100, 23);
+            coordinateMBox.TabIndex = 9;
+            coordinateMBox.Validating += coordinateMBox_Validating;
+            // 
+            // coordinateHBox
+            // 
+            coordinateHBox.Location = new Point(184, 170);
+            coordinateHBox.Name = "coordinateHBox";
+            coordinateHBox.Size = new Size(100, 23);
+            coordinateHBox.TabIndex = 8;
+            coordinateHBox.Validating += coordinateHBox_Validating;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(22, 178);
+            label4.Name = "label4";
+            label4.Size = new Size(148, 15);
+            label4.TabIndex = 36;
+            label4.Text = "Координати на небосхилі";
             // 
             // coordinateXText
             // 
@@ -281,36 +355,36 @@
             // addButton
             // 
             addButton.Anchor = AnchorStyles.Top;
-            addButton.Location = new Point(441, 246);
+            addButton.Location = new Point(458, 246);
             addButton.Name = "addButton";
             addButton.Size = new Size(75, 23);
-            addButton.TabIndex = 10;
+            addButton.TabIndex = 13;
             addButton.Text = "Додати";
             addButton.UseVisualStyleBackColor = true;
             addButton.Click += addButton_Click;
             // 
             // minuteNumericUpDown
             // 
-            minuteNumericUpDown.Location = new Point(395, 170);
+            minuteNumericUpDown.Location = new Point(395, 199);
             minuteNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteNumericUpDown.Name = "minuteNumericUpDown";
             minuteNumericUpDown.Size = new Size(104, 23);
-            minuteNumericUpDown.TabIndex = 9;
+            minuteNumericUpDown.TabIndex = 12;
             // 
             // hoursNumericUpDown
             // 
-            hoursNumericUpDown.Location = new Point(247, 170);
+            hoursNumericUpDown.Location = new Point(246, 199);
             hoursNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursNumericUpDown.Name = "hoursNumericUpDown";
             hoursNumericUpDown.Size = new Size(104, 23);
-            hoursNumericUpDown.TabIndex = 8;
+            hoursNumericUpDown.TabIndex = 11;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(522, 246);
+            searchButton.Location = new Point(539, 246);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(75, 23);
-            searchButton.TabIndex = 11;
+            searchButton.TabIndex = 14;
             searchButton.Text = "Пошук";
             searchButton.UseVisualStyleBackColor = true;
             searchButton.Click += searchButton_Click_2;
@@ -318,7 +392,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(369, 172);
+            label1.Location = new Point(368, 201);
             label1.Name = "label1";
             label1.Size = new Size(10, 15);
             label1.TabIndex = 21;
@@ -327,7 +401,7 @@
             // timeToView
             // 
             timeToView.AutoSize = true;
-            timeToView.Location = new Point(23, 178);
+            timeToView.Location = new Point(22, 207);
             timeToView.Name = "timeToView";
             timeToView.Size = new Size(115, 15);
             timeToView.TabIndex = 22;
@@ -439,7 +513,7 @@
             resultList.Name = "resultList";
             resultList.Size = new Size(619, 289);
             resultList.Sorted = true;
-            resultList.TabIndex = 12;
+            resultList.TabIndex = 15;
             resultList.ValueMember = "StellarMagnitude";
             resultList.DoubleClick += resultBox_DoubleClick;
             // 
@@ -514,5 +588,12 @@
         private Label label3;
         private Label coordinateXText;
         private Label coordinateYText;
+        private TextBox coordinateSBox;
+        private TextBox coordinateMBox;
+        private TextBox coordinateHBox;
+        private Label label4;
+        private Label coordinateSText;
+        private Label coordinateMText;
+        private Label coordinateHText;
     }
 }

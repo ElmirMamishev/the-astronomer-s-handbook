@@ -8,6 +8,9 @@
         public double Distance { get; set; }
         public double CoordinateX { get; set; }
         public double CoordinateY { get; set; }
+        public double CoordinateH { get; set; }
+        public double CoordinateM { get; set; }
+        public double CoordinateS { get; set; }
         public int StartMinute { get; set; }
         public int StartHour { get; set; }
         public int EndMinute { get; set; }

@@ -34,8 +34,8 @@ namespace StarBook.Models
         }
 
         public List <Star> Search(string name, string constallation, string stellarMagnitude,
-            string distance, string coordinateX, string coordinateY,
-            int hour, int minute)
+            string distance, string coordinateX, string coordinateY, string coordinateH, 
+            string coordinateM, string coordinateS, int hour, int minute)
         {
             var result = new List<Star>();
             foreach (var s in Stars)
@@ -50,6 +50,9 @@ namespace StarBook.Models
                     && s.Distance.ToString().Contains(distance)
                     && s.CoordinateX.ToString().Contains(coordinateX)
                     && s.CoordinateY.ToString().Contains(coordinateY)
+                    && s.CoordinateH.ToString().Contains(coordinateH)
+                    && s.CoordinateM.ToString().Contains(coordinateM)
+                    && s.CoordinateS.ToString().Contains(coordinateS)
                     && (startTime < endTime && time >= startTime
                     && time <= endTime || startTime >= endTime
                     && time <= endTime))

@@ -51,6 +51,7 @@ namespace StarBook
         {
             var result = library.Search(nameBox.Text, constellationBox.Text,
                stellarBox.Text, distanceBox.Text, coordinateBox1.Text,
+               coordinateHBox.Text, coordinateMBox.Text, coordinateSBox.Text,
                coordinateBox2.Text, (int)hoursNumericUpDown.Value,
                (int)minuteNumericUpDown.Value);
             starBindingSource.DataSource = result;
@@ -104,6 +105,42 @@ namespace StarBook
                 if (!float.TryParse(input, out _))
                 {
                     MessageBox.Show("Широта має бути числом.");
+                }
+            }
+        }
+
+        private void coordinateHBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string input = coordinateHBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Координата '°' має бути числом.");
+                }
+            }
+        }
+
+        private void coordinateMBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string input = coordinateMBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Координата '′' має бути числом.");
+                }
+            }
+        }
+
+        private void coordinateSBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string input = coordinateSBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Координата '″' має бути числом.");
                 }
             }
         }

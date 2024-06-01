@@ -26,6 +26,9 @@ namespace StarBook.Forms
             distanceEditBox.DataBindings.Add("Text", CurrentStar, "Distance");
             coordinateEditBox1.DataBindings.Add("Text", CurrentStar, "CoordinateX");
             coordinateEditBox2.DataBindings.Add("Text", CurrentStar, "CoordinateY");
+            coordinateEditHBox.DataBindings.Add("Text", CurrentStar, "CoordinateH");
+            coordinateEditMBox.DataBindings.Add("Text", CurrentStar, "CoordinateM");
+            coordinateEditSBox.DataBindings.Add("Text", CurrentStar, "CoordinateS");
             hoursStartEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartHour");
             minuteStartEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "StartMinute");
             hoursEndEditNumericUpDown.DataBindings.Add("Text", CurrentStar, "EndHour");
@@ -70,9 +73,9 @@ namespace StarBook.Forms
             if (!string.IsNullOrWhiteSpace(input))
             {
                 if (!float.TryParse(input, out _))
-                 { 
-                       MessageBox.Show("Довогота має бути числом.");
-                       e.Cancel= true;
+                {
+                    MessageBox.Show("Довогота має бути числом.");
+                    e.Cancel = true;
                 }
             }
         }
@@ -97,6 +100,42 @@ namespace StarBook.Forms
                 return CurrentStar;
             }
             return null;
+        }
+
+        private void coordinateEditHBox_Validating(object sender, CancelEventArgs e)
+        {
+            string input = coordinateEditHBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Координата '°' має бути числом.");
+                }
+            }
+        }
+
+        private void coordinateEditMBox_Validating(object sender, CancelEventArgs e)
+        {
+            string input = coordinateEditMBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Координата '′' має бути числом.");
+                }
+            }
+        }
+
+        private void coordinateEditSBox_Validating(object sender, CancelEventArgs e)
+        {
+            string input = coordinateEditSBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Координата '″' має бути числом.");
+                }
+            }
         }
     }
 }

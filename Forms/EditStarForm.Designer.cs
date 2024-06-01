@@ -52,16 +52,26 @@
             label3 = new Label();
             coordinateXEditText = new Label();
             coordinateYEditText = new Label();
+            label4 = new Label();
+            coordinateEditHText = new Label();
+            coordinateEditMText = new Label();
+            coordinateEditSText = new Label();
+            coordinateEditHNumericUpDown = new NumericUpDown();
+            coordinateEditMNumericUpDown = new NumericUpDown();
+            coordinateEditSnumericUpDown = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)minuteStartEditNumericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hoursStartEditNumericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hoursEndEditNumericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minuteEndtEditNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)coordinateEditHNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)coordinateEditMNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)coordinateEditSnumericUpDown).BeginInit();
             SuspendLayout();
             // 
             // nameTextEdit
             // 
             nameTextEdit.AutoSize = true;
-            nameTextEdit.Location = new Point(55, 41);
+            nameTextEdit.Location = new Point(50, 41);
             nameTextEdit.Name = "nameTextEdit";
             nameTextEdit.Size = new Size(39, 15);
             nameTextEdit.TabIndex = 0;
@@ -85,7 +95,7 @@
             // constellationEditText
             // 
             constellationEditText.AutoSize = true;
-            constellationEditText.Location = new Point(55, 70);
+            constellationEditText.Location = new Point(50, 70);
             constellationEditText.Name = "constellationEditText";
             constellationEditText.Size = new Size(45, 15);
             constellationEditText.TabIndex = 2;
@@ -102,7 +112,7 @@
             // stellarEditText
             // 
             stellarEditText.AutoSize = true;
-            stellarEditText.Location = new Point(55, 99);
+            stellarEditText.Location = new Point(50, 99);
             stellarEditText.Name = "stellarEditText";
             stellarEditText.Size = new Size(103, 15);
             stellarEditText.TabIndex = 4;
@@ -120,7 +130,7 @@
             // distanceEditText
             // 
             distanceEditText.AutoSize = true;
-            distanceEditText.Location = new Point(55, 128);
+            distanceEditText.Location = new Point(50, 128);
             distanceEditText.Name = "distanceEditText";
             distanceEditText.Size = new Size(53, 15);
             distanceEditText.TabIndex = 6;
@@ -129,7 +139,7 @@
             // coordinateEditText
             // 
             coordinateEditText.AutoSize = true;
-            coordinateEditText.Location = new Point(55, 157);
+            coordinateEditText.Location = new Point(50, 157);
             coordinateEditText.Name = "coordinateEditText";
             coordinateEditText.Size = new Size(73, 15);
             coordinateEditText.TabIndex = 8;
@@ -139,7 +149,7 @@
             // 
             cancelButtonEdit.Anchor = AnchorStyles.Top;
             cancelButtonEdit.DialogResult = DialogResult.Cancel;
-            cancelButtonEdit.Location = new Point(504, 236);
+            cancelButtonEdit.Location = new Point(568, 278);
             cancelButtonEdit.Name = "cancelButtonEdit";
             cancelButtonEdit.Size = new Size(75, 23);
             cancelButtonEdit.TabIndex = 12;
@@ -149,7 +159,7 @@
             // okButtonEdit
             // 
             okButtonEdit.DialogResult = DialogResult.OK;
-            okButtonEdit.Location = new Point(415, 236);
+            okButtonEdit.Location = new Point(487, 278);
             okButtonEdit.Name = "okButtonEdit";
             okButtonEdit.Size = new Size(75, 23);
             okButtonEdit.TabIndex = 11;
@@ -174,7 +184,7 @@
             // 
             // minuteStartEditNumericUpDown
             // 
-            minuteStartEditNumericUpDown.Location = new Point(386, 178);
+            minuteStartEditNumericUpDown.Location = new Point(413, 207);
             minuteStartEditNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteStartEditNumericUpDown.Name = "minuteStartEditNumericUpDown";
             minuteStartEditNumericUpDown.Size = new Size(104, 23);
@@ -182,7 +192,7 @@
             // 
             // hoursStartEditNumericUpDown
             // 
-            hoursStartEditNumericUpDown.Location = new Point(250, 178);
+            hoursStartEditNumericUpDown.Location = new Point(244, 207);
             hoursStartEditNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursStartEditNumericUpDown.Name = "hoursStartEditNumericUpDown";
             hoursStartEditNumericUpDown.Size = new Size(104, 23);
@@ -191,7 +201,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(365, 180);
+            label1.Location = new Point(377, 209);
             label1.Name = "label1";
             label1.Size = new Size(10, 15);
             label1.TabIndex = 25;
@@ -200,7 +210,7 @@
             // timeToStartViewEditText
             // 
             timeToStartViewEditText.AutoSize = true;
-            timeToStartViewEditText.Location = new Point(55, 186);
+            timeToStartViewEditText.Location = new Point(51, 215);
             timeToStartViewEditText.Name = "timeToStartViewEditText";
             timeToStartViewEditText.Size = new Size(145, 15);
             timeToStartViewEditText.TabIndex = 26;
@@ -209,7 +219,7 @@
             // TimeToStopViewEditText
             // 
             TimeToStopViewEditText.AutoSize = true;
-            TimeToStopViewEditText.Location = new Point(55, 212);
+            TimeToStopViewEditText.Location = new Point(51, 244);
             TimeToStopViewEditText.Name = "TimeToStopViewEditText";
             TimeToStopViewEditText.Size = new Size(131, 15);
             TimeToStopViewEditText.TabIndex = 27;
@@ -217,7 +227,7 @@
             // 
             // hoursEndEditNumericUpDown
             // 
-            hoursEndEditNumericUpDown.Location = new Point(250, 207);
+            hoursEndEditNumericUpDown.Location = new Point(244, 236);
             hoursEndEditNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursEndEditNumericUpDown.Name = "hoursEndEditNumericUpDown";
             hoursEndEditNumericUpDown.Size = new Size(104, 23);
@@ -225,7 +235,7 @@
             // 
             // minuteEndtEditNumericUpDown
             // 
-            minuteEndtEditNumericUpDown.Location = new Point(386, 207);
+            minuteEndtEditNumericUpDown.Location = new Point(413, 236);
             minuteEndtEditNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteEndtEditNumericUpDown.Name = "minuteEndtEditNumericUpDown";
             minuteEndtEditNumericUpDown.Size = new Size(104, 23);
@@ -234,7 +244,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(365, 209);
+            label2.Location = new Point(377, 238);
             label2.Name = "label2";
             label2.Size = new Size(10, 15);
             label2.TabIndex = 30;
@@ -267,13 +277,80 @@
             coordinateYEditText.TabIndex = 33;
             coordinateYEditText.Text = "Ш:";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(51, 185);
+            label4.Name = "label4";
+            label4.Size = new Size(148, 15);
+            label4.TabIndex = 34;
+            label4.Text = "Координати на небосхилі";
+            // 
+            // coordinateEditHText
+            // 
+            coordinateEditHText.AutoSize = true;
+            coordinateEditHText.Location = new Point(311, 175);
+            coordinateEditHText.Name = "coordinateEditHText";
+            coordinateEditHText.Size = new Size(12, 15);
+            coordinateEditHText.TabIndex = 41;
+            coordinateEditHText.Text = "°";
+            // 
+            // coordinateEditMText
+            // 
+            coordinateEditMText.AutoSize = true;
+            coordinateEditMText.Location = new Point(445, 175);
+            coordinateEditMText.Name = "coordinateEditMText";
+            coordinateEditMText.Size = new Size(10, 15);
+            coordinateEditMText.TabIndex = 42;
+            coordinateEditMText.Text = "′";
+            // 
+            // coordinateEditSText
+            // 
+            coordinateEditSText.AutoSize = true;
+            coordinateEditSText.Location = new Point(585, 175);
+            coordinateEditSText.Name = "coordinateEditSText";
+            coordinateEditSText.Size = new Size(12, 15);
+            coordinateEditSText.TabIndex = 43;
+            coordinateEditSText.Text = "″";
+            // 
+            // coordinateEditHNumericUpDown
+            // 
+            coordinateEditHNumericUpDown.Location = new Point(205, 179);
+            coordinateEditHNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
+            coordinateEditHNumericUpDown.Name = "coordinateEditHNumericUpDown";
+            coordinateEditHNumericUpDown.Size = new Size(104, 23);
+            coordinateEditHNumericUpDown.TabIndex = 44;
+            // 
+            // coordinateEditMNumericUpDown
+            // 
+            coordinateEditMNumericUpDown.Location = new Point(335, 178);
+            coordinateEditMNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
+            coordinateEditMNumericUpDown.Name = "coordinateEditMNumericUpDown";
+            coordinateEditMNumericUpDown.Size = new Size(104, 23);
+            coordinateEditMNumericUpDown.TabIndex = 45;
+            // 
+            // coordinateEditSnumericUpDown
+            // 
+            coordinateEditSnumericUpDown.Location = new Point(475, 178);
+            coordinateEditSnumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
+            coordinateEditSnumericUpDown.Name = "coordinateEditSnumericUpDown";
+            coordinateEditSnumericUpDown.Size = new Size(104, 23);
+            coordinateEditSnumericUpDown.TabIndex = 46;
+            // 
             // EditStarForm
             // 
             AcceptButton = okButtonEdit;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = cancelButtonEdit;
-            ClientSize = new Size(655, 265);
+            ClientSize = new Size(655, 313);
+            Controls.Add(coordinateEditSnumericUpDown);
+            Controls.Add(coordinateEditMNumericUpDown);
+            Controls.Add(coordinateEditHNumericUpDown);
+            Controls.Add(coordinateEditSText);
+            Controls.Add(coordinateEditMText);
+            Controls.Add(coordinateEditHText);
+            Controls.Add(label4);
             Controls.Add(coordinateYEditText);
             Controls.Add(coordinateXEditText);
             Controls.Add(label3);
@@ -298,14 +375,17 @@
             Controls.Add(constellationEditText);
             Controls.Add(nameEditBox);
             Controls.Add(nameTextEdit);
-            MaximumSize = new Size(671, 304);
-            MinimumSize = new Size(671, 304);
+            MaximumSize = new Size(671, 352);
+            MinimumSize = new Size(671, 352);
             Name = "EditStarForm";
             Text = "EditForm";
             ((System.ComponentModel.ISupportInitialize)minuteStartEditNumericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)hoursStartEditNumericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)hoursEndEditNumericUpDown).EndInit();
             ((System.ComponentModel.ISupportInitialize)minuteEndtEditNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)coordinateEditHNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)coordinateEditMNumericUpDown).EndInit();
+            ((System.ComponentModel.ISupportInitialize)coordinateEditSnumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -336,5 +416,12 @@
         private Label label3;
         private Label coordinateXEditText;
         private Label coordinateYEditText;
+        private Label label4;
+        private Label coordinateEditHText;
+        private Label coordinateEditMText;
+        private Label coordinateEditSText;
+        private NumericUpDown coordinateEditHNumericUpDown;
+        private NumericUpDown coordinateEditMNumericUpDown;
+        private NumericUpDown coordinateEditSnumericUpDown;
     }
 }
