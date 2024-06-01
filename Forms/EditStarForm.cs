@@ -37,7 +37,6 @@ namespace StarBook.Forms
             if (nameEditBox.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Назва не може бути пустою.");
-                e.Cancel = true;
             }
         }
 
@@ -47,44 +46,45 @@ namespace StarBook.Forms
             if (distance < 0)
             {
                 MessageBox.Show("Відстань має бути числом більше 0.");
-                e.Cancel = true;
             }
             if (!isNumber)
             {
                 MessageBox.Show("Відстань має бути числом");
-                e.Cancel = true;
             }
         }
 
         private void stellarEditBox_Validating(object sender, CancelEventArgs e)
         {
-            bool isNumber = float.TryParse(stellarEditBox.Text, out float magnitude);
-            if (!isNumber)
+            string input = stellarEditBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
             {
-                MessageBox.Show("Зоряна величина має бути числом.");
-                e.Cancel = true;
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Зоряна величина має бути числом.");
+                }
             }
         }
         private void coordinateEditBox1_Validating(object sender, CancelEventArgs e)
         {
-            bool isNumber = float.TryParse(coordinateEditBox1.Text, out float coordinateX);
+            string input = coordinateEditBox1.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
             {
-                if (!isNumber)
-                {
-                    MessageBox.Show("Координата 'X' має бути числом.");
-                    e.Cancel = true;
+                if (!float.TryParse(input, out _))
+                 { 
+                       MessageBox.Show("Довогота має бути числом.");
+                       e.Cancel= true;
                 }
             }
         }
 
         private void coordinateEditBox2_Validating(object sender, CancelEventArgs e)
         {
-            bool isNumber = float.TryParse(coordinateEditBox2.Text, out float coordinateY);
+            string input = coordinateEditBox2.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
             {
-                if (!isNumber)
+                if (!float.TryParse(input, out _))
                 {
-                    MessageBox.Show("Координата 'Y' має бути числом.");
-                    e.Cancel = true;
+                    MessageBox.Show("Широта має бути числом.");
                 }
             }
         }

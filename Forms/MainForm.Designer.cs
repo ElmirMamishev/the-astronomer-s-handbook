@@ -51,6 +51,9 @@
             toolStripSeparator4 = new ToolStripSeparator();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
             panel1 = new Panel();
+            coordinateXText = new Label();
+            coordinateYText = new Label();
+            label3 = new Label();
             addButton = new Button();
             minuteNumericUpDown = new NumericUpDown();
             hoursNumericUpDown = new NumericUpDown();
@@ -159,7 +162,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(647, 24);
+            menuStrip1.Size = new Size(678, 24);
             menuStrip1.TabIndex = 18;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -223,6 +226,9 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(coordinateXText);
+            panel1.Controls.Add(coordinateYText);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(addButton);
             panel1.Controls.Add(minuteNumericUpDown);
             panel1.Controls.Add(hoursNumericUpDown);
@@ -240,15 +246,42 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(nameBox);
             panel1.Controls.Add(nameText);
-            panel1.Location = new Point(28, 27);
+            panel1.Location = new Point(31, 27);
             panel1.Name = "panel1";
-            panel1.Size = new Size(586, 274);
+            panel1.Size = new Size(619, 274);
             panel1.TabIndex = 1;
+            // 
+            // coordinateXText
+            // 
+            coordinateXText.AutoSize = true;
+            coordinateXText.Location = new Point(161, 149);
+            coordinateXText.Name = "coordinateXText";
+            coordinateXText.Size = new Size(18, 15);
+            coordinateXText.TabIndex = 35;
+            coordinateXText.Text = "Д:";
+            // 
+            // coordinateYText
+            // 
+            coordinateYText.AutoSize = true;
+            coordinateYText.Location = new Point(372, 149);
+            coordinateYText.Name = "coordinateYText";
+            coordinateYText.Size = new Size(21, 15);
+            coordinateYText.TabIndex = 34;
+            coordinateYText.Text = "Ш:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(567, 120);
+            label3.Name = "label3";
+            label3.Size = new Size(35, 15);
+            label3.TabIndex = 23;
+            label3.Text = "св. р.";
             // 
             // addButton
             // 
             addButton.Anchor = AnchorStyles.Top;
-            addButton.Location = new Point(425, 246);
+            addButton.Location = new Point(441, 246);
             addButton.Name = "addButton";
             addButton.Size = new Size(75, 23);
             addButton.TabIndex = 10;
@@ -258,7 +291,7 @@
             // 
             // minuteNumericUpDown
             // 
-            minuteNumericUpDown.Location = new Point(368, 170);
+            minuteNumericUpDown.Location = new Point(395, 170);
             minuteNumericUpDown.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             minuteNumericUpDown.Name = "minuteNumericUpDown";
             minuteNumericUpDown.Size = new Size(104, 23);
@@ -266,7 +299,7 @@
             // 
             // hoursNumericUpDown
             // 
-            hoursNumericUpDown.Location = new Point(250, 170);
+            hoursNumericUpDown.Location = new Point(247, 170);
             hoursNumericUpDown.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             hoursNumericUpDown.Name = "hoursNumericUpDown";
             hoursNumericUpDown.Size = new Size(104, 23);
@@ -274,7 +307,7 @@
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(506, 246);
+            searchButton.Location = new Point(522, 246);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(75, 23);
             searchButton.TabIndex = 11;
@@ -285,7 +318,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(357, 173);
+            label1.Location = new Point(369, 172);
             label1.Name = "label1";
             label1.Size = new Size(10, 15);
             label1.TabIndex = 21;
@@ -302,19 +335,21 @@
             // 
             // coordinateBox2
             // 
-            coordinateBox2.Location = new Point(368, 141);
+            coordinateBox2.Location = new Point(395, 141);
             coordinateBox2.Name = "coordinateBox2";
-            coordinateBox2.Size = new Size(193, 23);
+            coordinateBox2.Size = new Size(166, 23);
             coordinateBox2.TabIndex = 7;
             coordinateBox2.Enter += searchButton_Click_2;
+            coordinateBox2.Validating += coordinateBox2_Validating;
             // 
             // coordinateBox1
             // 
-            coordinateBox1.Location = new Point(161, 141);
+            coordinateBox1.Location = new Point(184, 141);
             coordinateBox1.Name = "coordinateBox1";
-            coordinateBox1.Size = new Size(193, 23);
+            coordinateBox1.Size = new Size(166, 23);
             coordinateBox1.TabIndex = 6;
             coordinateBox1.Enter += searchButton_Click_2;
+            coordinateBox1.Validating += coordinateBox1_Validating;
             // 
             // coordinateText
             // 
@@ -400,9 +435,9 @@
             resultList.DataSource = starBindingSource;
             resultList.DisplayMember = "Name";
             resultList.ItemHeight = 15;
-            resultList.Location = new Point(28, 307);
+            resultList.Location = new Point(31, 303);
             resultList.Name = "resultList";
-            resultList.Size = new Size(586, 274);
+            resultList.Size = new Size(619, 289);
             resultList.Sorted = true;
             resultList.TabIndex = 12;
             resultList.ValueMember = "StellarMagnitude";
@@ -417,11 +452,11 @@
             AcceptButton = searchButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(647, 585);
+            ClientSize = new Size(678, 605);
             Controls.Add(resultList);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
-            MinimumSize = new Size(663, 624);
+            MinimumSize = new Size(694, 644);
             Name = "MainForm";
             Text = "MainForm";
             menuStrip1.ResumeLayout(false);
@@ -476,5 +511,8 @@
         private Button addButton;
         private ToolStripMenuItem createNewToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator4;
+        private Label label3;
+        private Label coordinateXText;
+        private Label coordinateYText;
     }
 }

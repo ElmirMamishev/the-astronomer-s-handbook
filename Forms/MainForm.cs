@@ -27,7 +27,7 @@ namespace StarBook
                 Star? star = resultList?.SelectedItem as Star;
                 var starEditForm = new EditStarForm(star);
                 starEditForm.Open();
-                //Search();
+                Search();
             };
         }
         const string PATH_TO_DATA = ".\\library.txt";
@@ -74,11 +74,37 @@ namespace StarBook
 
         private void stellarBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            bool isNumber = float.TryParse(stellarBox.Text, out float magnitude);
-            if (!isNumber)
+            string input = stellarBox.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
             {
-                MessageBox.Show("Зоряна величина має бути числом.");
-                e.Cancel = true;
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Зоряна величина має бути числом.");
+                }
+            }
+        }
+
+        private void coordinateBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string input = coordinateBox1.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Довогота має бути числом.");
+                }
+            }
+        }
+
+        private void coordinateBox2_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string input = coordinateBox2.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                if (!float.TryParse(input, out _))
+                {
+                    MessageBox.Show("Широта має бути числом.");
+                }
             }
         }
     }
