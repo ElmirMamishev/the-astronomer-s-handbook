@@ -10,28 +10,8 @@ namespace StarBook.Models
         public Library() 
         {
             Stars = new List<Star> ();
-            FillWithTestData(1000);
         }
         public List<Star> Stars { get; set; }
-        void FillWithTestData(int n)
-        {
-            for (int i = 0; i < n; i++)
-            {
-                Stars.Add(new Star
-                {
-                    Name = $"Star{i}",
-                    Constellation = $"Constellation{i / 3}",
-                    StellarMagnitude = i,
-                    Distance = i,
-                    CoordinateX = i / 3,
-                    CoordinateY = i % 5,
-                    StartHour = 20 + i % 4,
-                    StartMinute = i % 60,
-                    EndHour = i % 5,
-                    EndMinute = i % 60
-                });
-            }
-        }
 
         public List <Star> Search(string name, string constallation, string stellarMagnitude,
             string distance, string coordinateX, string coordinateY, string coordinateH, 
